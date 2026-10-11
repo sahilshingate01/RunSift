@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "runsift"
+version = "0.1.0"
+description = "Inference-aware reverse proxy and state-machine gateway eliminating the Agentic Inference Tax on Nebius & NVIDIA open models"
+readme = "README.md"
+license = "Apache-2.0"
+authors = [
+    { name = "Sahil Shingate", email = "sahilshingate0@gmail.com" },
+]
+maintainers = [
+    { name = "Sahil Shingate", email = "sahilshingate0@gmail.com" },
+]
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.30.0",
+    "pydantic>=2.8.0",
+    "httpx>=0.27.0",
+    "pyyaml>=6.0.1",
+    "tiktoken>=0.7.0",
+    "openai>=1.0.0",
+    "textual>=8.2.8",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+    "ruff>=0.5.0",
+]
+examples = [
+    "langgraph>=0.2.0",
+    "langchain-openai>=0.1.0",
+    "langchain-core>=0.2.0",
+    "crewai>=0.55.0",
+    "pyautogen>=0.2.35",
+]
+
+[project.scripts]
+runsift = "src.tui.__main__:main"
+cacheforge = "src.tui.__main__:main"
+
+[project.urls]
+Homepage = "https://github.com/sahilshingate01/RunSift"
+Repository = "https://github.com/sahilshingate01/RunSift"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+exclude = [".git", ".venv", "sessions"]
