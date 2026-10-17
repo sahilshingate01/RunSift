@@ -1,0 +1,11 @@
+[cf: earlier test run, superseded by a later run of the same tests]
+======================== 8 failed, 37 passed in 0.25s =========================
+FAILED tests/test_codec.py::test_codec_concatenates_single_tool_call_arguments_across_chunks - json.decoder.JSONDecodeError: Extra data: line 1 column 8 (char 7)
+FAILED tests/test_codec.py::test_codec_concatenates_multiple_indexed_tool_calls - json.decoder.JSONDecodeError: Extra data: line 1 column 10 (char 9)
+FAILED tests/test_limiter.py::test_limiter_subsecond_fractional_refill - assert 0.0 == 50.0 ± 5.0e-05
+FAILED tests/test_limiter.py::test_limiter_multiple_subsecond_ticks_accumulate_accurately - assert 0.0 == 50.0 ± 5.0e-05
+FAILED tests/test_scheduler.py::test_scheduler_drain_all_retains_partial_remainder_when_false - AssertionError: assert 2 == 1
+FAILED tests/test_telemetry.py::test_telemetry_single_sample_percentiles_do_not_overflow - IndexError: list index out of range
+FAILED tests/test_telemetry.py::test_telemetry_ten_sample_nearest_rank_percentiles - assert 600.0 == 500.0
+FAILED tests/test_telemetry.py::test_telemetry_token_reuse_and_hit_rate - IndexError: list index out of range
+<!-- cf:v2 -->

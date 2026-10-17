@@ -1,0 +1,7 @@
+[cf: condensed pytest output, v2]
+[cf: test run did not finish (timed out or interrupted); per-file counts below are partial]
+[cf: tests/test_alpha.py: 2 passed, 1 failed (partial)]
+[cf: tests/test_beta.py: 2 passed, 0 failed (partial)]
+tests/test_beta.py::test_beta_drain_retains_partial_when_false 
+[TIMEOUT] pytest exceeded 35s limit (possible infinite loop or hang in workspace code).
+<!-- cf:v2 -->

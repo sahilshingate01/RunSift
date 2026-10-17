@@ -1,0 +1,69 @@
+[COMPACTED PYTEST OUTPUT]
+Test Files Summary:
+- tests/test_codec.py: 8 passed, 0 failed
+- tests/test_limiter.py: 8 passed, 1 failed
+- tests/test_pipeline.py: 4 passed, 3 failed
+- tests/test_radix.py: 9 passed, 1 failed
+- tests/test_scheduler.py: 7 passed, 1 failed
+- tests/test_telemetry.py: 8 passed, 2 failed
+- tests/test_units.py: 4 passed, 0 failed
+
+--- [Failures] ---
+____________________ test_limiter_starts_empty_by_default _____________________
+>       assert lim.available_tokens(now=0.0) == 0.0
+E       assert 100.0 == 0.0
+E        +  where 100.0 = available_tokens(now=0.0)
+E        +    where available_tokens = <tensorroute.limiter.TokenBucketLimiter object at 0x000001D632D254C0>.available_tokens
+tests\test_limiter.py:63: AssertionError
+_____________________ test_pipeline_records_latency_in_ms _____________________
+>       assert s["p50_ttft_ms"] == pytest.approx(200.0)
+E       assert 0.2 == 200.0 ± 2.0e-04
+E         comparison failed
+E         Obtained: 0.2
+E         Expected: 200.0 ± 2.0e-04
+tests\test_pipeline.py:17: AssertionError
+______________ test_pipeline_admits_all_requests_including_tail _______________
+>       assert admitted == ["r0", "r1", "r2", "r3", "r4"]
+E       AssertionError: assert ['r0', 'r1', 'r2', 'r3'] == ['r0', 'r1', 'r2', 'r3', 'r4']
+E         Right contains one more item: 'r4'
+E         Full diff:
+E           [
+E               'r0',
+E               'r1',
+E               'r2',
+E               'r3',
+E         -     'r4',
+E           ]
+tests\test_pipeline.py:37: AssertionError
+_____________________ test_pipeline_routes_to_warm_worker _____________________
+>       assert worker == "gpu-warm"
+E       AssertionError: assert None == 'gpu-warm'
+tests\test_pipeline.py:62: AssertionError
+_______________________ test_radix_match_counts_tokens ________________________
+>       assert matched == 8
+E       assert 2 == 8
+tests\test_radix.py:108: AssertionError
+_____________________ test_scheduler_flushes_partial_tail _____________________
+>       assert len(batches) == 2
+E       AssertionError: assert 1 == 2
+E        +  where 1 = len([[BatchRequest(request_id='req-0', prompt_tokens=100, priority=5, prefix_hash=''), BatchRequest(request_id='req-1', prompt_tokens=100, priority=4, prefix_hash=''), BatchRequest(request_id='req-2', prompt_tokens=100, priority=3, prefix_hash='')]])
+tests\test_scheduler.py:75: AssertionError
+____________________ test_telemetry_hit_rate_is_percentage ____________________
+>       assert s["hit_rate_pct"] == 50.0
+E       assert 0.5 == 50.0
+tests\test_telemetry.py:77: AssertionError
+__________________ test_telemetry_token_reuse_is_percentage ___________________
+>       assert s["token_reuse_pct"] == 45.0
+E       assert 0.45 == 45.0
+tests\test_telemetry.py:85: AssertionError
+FAILED tests/test_limiter.py::test_limiter_starts_empty_by_default - assert 100.0 == 0.0
+FAILED tests/test_pipeline.py::test_pipeline_records_latency_in_ms - assert 0.2 == 200.0 ± 2.0e-04
+FAILED tests/test_pipeline.py::test_pipeline_admits_all_requests_including_tail - AssertionError: assert ['r0', 'r1', 'r2', 'r3'] == ['r0', 'r1', 'r2', 'r3', 'r4']
+FAILED tests/test_pipeline.py::test_pipeline_routes_to_warm_worker - AssertionError: assert None == 'gpu-warm'
+FAILED tests/test_radix.py::test_radix_match_counts_tokens - assert 2 == 8
+FAILED tests/test_scheduler.py::test_scheduler_flushes_partial_tail - AssertionError: assert 1 == 2
+FAILED tests/test_telemetry.py::test_telemetry_hit_rate_is_percentage - assert 0.5 == 50.0
+FAILED tests/test_telemetry.py::test_telemetry_token_reuse_is_percentage - assert 0.45 == 45.0
+
+======================== 8 failed, 48 passed in 0.20s =========================
+<!-- cf:compacted -->

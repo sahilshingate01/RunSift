@@ -1,0 +1,378 @@
+============================= test session starts =============================
+platform win32 -- Python 3.12.8, pytest-9.1.1, pluggy-1.6.0 -- C:\Users\adamm_000\Desktop\RunSift\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: /workspace
+plugins: anyio-4.15.1, asyncio-1.4.0
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 56 items
+
+tests/test_codec.py::test_codec_ignores_comments_and_blank_lines PASSED  [  1%]
+tests/test_codec.py::test_codec_handles_done_sentinel PASSED             [  3%]
+tests/test_codec.py::test_codec_assembles_content_and_reasoning_deltas PASSED [  5%]
+tests/test_codec.py::test_codec_concatenates_single_tool_call_arguments_across_chunks PASSED [  7%]
+tests/test_codec.py::test_codec_handles_interleaved_multi_tool_calls PASSED [  8%]
+tests/test_codec.py::test_codec_extracts_nested_cached_tokens_usage PASSED [ 10%]
+tests/test_codec.py::test_codec_extracts_top_level_prompt_cache_hit_tokens PASSED [ 12%]
+tests/test_codec.py::test_codec_preserves_usage_when_later_chunk_has_no_usage PASSED [ 14%]
+tests/test_limiter.py::test_limiter_invalid_configuration PASSED         [ 16%]
+tests/test_limiter.py::test_limiter_initial_full_capacity_acquire PASSED [ 17%]
+tests/test_limiter.py::test_limiter_monotonic_clock_guard PASSED         [ 19%]
+tests/test_limiter.py::test_limiter_caps_at_capacity PASSED              [ 21%]
+tests/test_limiter.py::test_limiter_insufficient_tokens_returns_exact_wait_time PASSED [ 23%]
+tests/test_limiter.py::test_limiter_request_exceeding_capacity_returns_inf_wait PASSED [ 25%]
+tests/test_limiter.py::test_limiter_negative_request_raises PASSED       [ 26%]
+tests/test_limiter.py::test_utilization_is_fraction PASSED               [ 28%]
+tests/test_limiter.py::test_limiter_starts_empty_by_default FAILED       [ 30%]
+tests/test_pipeline.py::test_pipeline_records_latency_in_ms FAILED       [ 32%]
+tests/test_pipeline.py::test_pipeline_admits_all_requests_including_tail FAILED [ 33%]
+tests/test_pipeline.py::test_pipeline_immediate_startup_admission PASSED [ 35%]
+tests/test_pipeline.py::test_pipeline_routes_to_warm_worker FAILED       [ 37%]
+tests/test_pipeline.py::test_pipeline_does_not_route_below_threshold PASSED [ 39%]
+tests/test_pipeline.py::test_pipeline_cold_route_returns_none PASSED     [ 41%]
+tests/test_pipeline.py::test_pipeline_empty_admission PASSED             [ 42%]
+tests/test_radix.py::test_radix_invalid_chunk_size PASSED                [ 44%]
+tests/test_radix.py::test_radix_insert_and_exact_match PASSED            [ 46%]
+tests/test_radix.py::test_radix_partial_chunk_truncation PASSED          [ 48%]
+tests/test_radix.py::test_radix_short_sequence_below_chunk_size PASSED   [ 50%]
+tests/test_radix.py::test_radix_ttl_expiration_blocks_match PASSED       [ 51%]
+tests/test_radix.py::test_radix_release_prefix_decrements_ref_count PASSED [ 53%]
+tests/test_radix.py::test_radix_release_floors_at_zero PASSED            [ 55%]
+tests/test_radix.py::test_radix_evict_expired_leaf_preserves_shared_parent_ref_count PASSED [ 57%]
+tests/test_radix.py::test_radix_evict_deep_chain_updates_all_ancestors_once PASSED [ 58%]
+tests/test_radix.py::test_radix_match_counts_tokens FAILED               [ 60%]
+tests/test_scheduler.py::test_scheduler_invalid_limits PASSED            [ 62%]
+tests/test_scheduler.py::test_scheduler_request_exceeding_max_batch_tokens_raises PASSED [ 64%]
+tests/test_scheduler.py::test_scheduler_fifo_order_for_equal_priority PASSED [ 66%]
+tests/test_scheduler.py::test_scheduler_priority_preemption_over_fifo PASSED [ 67%]
+tests/test_scheduler.py::test_scheduler_batch_token_budget_packing PASSED [ 69%]
+tests/test_scheduler.py::test_scheduler_drain_all_exact_multiple PASSED  [ 71%]
+tests/test_scheduler.py::test_scheduler_drain_all_retains_partial_remainder_when_false PASSED [ 73%]
+tests/test_scheduler.py::test_scheduler_flushes_partial_tail FAILED      [ 75%]
+tests/test_telemetry.py::test_telemetry_invalid_max_samples PASSED       [ 76%]
+tests/test_telemetry.py::test_telemetry_rejects_negative_metrics PASSED  [ 78%]
+tests/test_telemetry.py::test_telemetry_empty_window_summary_and_percentile PASSED [ 80%]
+tests/test_telemetry.py::test_telemetry_single_sample_percentiles_do_not_overflow PASSED [ 82%]
+tests/test_telemetry.py::test_telemetry_filtered_empty_window_returns_zero_without_division_error PASSED [ 83%]
+tests/test_telemetry.py::test_telemetry_ten_sample_nearest_rank_percentiles PASSED [ 85%]
+tests/test_telemetry.py::test_telemetry_ring_buffer_evicts_oldest PASSED [ 87%]
+tests/test_telemetry.py::test_telemetry_invalid_percentile_range PASSED  [ 89%]
+tests/test_telemetry.py::test_telemetry_hit_rate_is_percentage FAILED    [ 91%]
+tests/test_telemetry.py::test_telemetry_token_reuse_is_percentage FAILED [ 92%]
+tests/test_units.py::test_to_ms_conversion PASSED                        [ 94%]
+tests/test_units.py::test_safe_ratio_valid_fractions PASSED              [ 96%]
+tests/test_units.py::test_safe_ratio_zero_denominator PASSED             [ 98%]
+tests/test_units.py::test_safe_ratio_bounds PASSED                       [100%]
+
+================================== FAILURES ===================================
+____________________ test_limiter_starts_empty_by_default _____________________
+
+    def test_limiter_starts_empty_by_default() -> None:
+        lim = TokenBucketLimiter(capacity=100.0, refill_rate_per_sec=10.0)
+>       assert lim.available_tokens(now=0.0) == 0.0
+E       assert 100.0 == 0.0
+E        +  where 100.0 = available_tokens(now=0.0)
+E        +    where available_tokens = <tensorroute.limiter.TokenBucketLimiter object at 0x000001D632D254C0>.available_tokens
+
+tests\test_limiter.py:63: AssertionError
+_____________________ test_pipeline_records_latency_in_ms _____________________
+
+    def test_pipeline_records_latency_in_ms() -> None:
+        pipeline = build_pipeline()
+        pipeline.record_completion(
+            result={"usage": {"prompt_tokens": 100, "cached_tokens": 50}},
+            ttft_seconds=0.2,
+        )
+        s = pipeline.window.summary()
+>       assert s["p50_ttft_ms"] == pytest.approx(200.0)
+E       assert 0.2 == 200.0 ± 2.0e-04
+E         
+E         comparison failed
+E         Obtained: 0.2
+E         Expected: 200.0 ± 2.0e-04
+
+tests\test_pipeline.py:17: AssertionError
+______________ test_pipeline_admits_all_requests_including_tail _______________
+
+    def test_pipeline_admits_all_requests_including_tail() -> None:
+        pipeline = build_pipeline(
+            capacity=400.0,
+            refill_rate=200.0,
+            max_batch_size=4,
+            max_batch_tokens=1000,
+            chunk_size=4,
+        )
+        reqs = [
+            BatchRequest("r0", prompt_tokens=100, priority=5),
+            BatchRequest("r1", prompt_tokens=100, priority=4),
+            BatchRequest("r2", prompt_tokens=100, priority=3),
+            BatchRequest("r3", prompt_tokens=100, priority=2),
+            BatchRequest("r4", prompt_tokens=50, priority=1),
+        ]
+        admitted = pipeline.admit_all(reqs, start_ts=0.0, tick=0.25, deadline_s=2.0)
+>       assert admitted == ["r0", "r1", "r2", "r3", "r4"]
+E       AssertionError: assert ['r0', 'r1', 'r2', 'r3'] == ['r0', 'r1', 'r2', 'r3', 'r4']
+E         
+E         Right contains one more item: 'r4'
+E         
+E         Full diff:
+E           [
+E               'r0',
+E               'r1',
+E               'r2',
+E               'r3',
+E         -     'r4',
+E           ]
+
+tests\test_pipeline.py:37: AssertionError
+_____________________ test_pipeline_routes_to_warm_worker _____________________
+
+    def test_pipeline_routes_to_warm_worker() -> None:
+        pipeline = build_pipeline(chunk_size=4)
+        pipeline.tree.insert_prefix([1, 2, 3, 4, 5, 6, 7, 8], worker_id="gpu-warm", now=10.0)
+        worker = pipeline.route([1, 2, 3, 4, 5, 6, 7, 8], now=20.0, min_cached_tokens=8)
+>       assert worker == "gpu-warm"
+E       AssertionError: assert None == 'gpu-warm'
+
+tests\test_pipeline.py:62: AssertionError
+_______________________ test_radix_match_counts_tokens ________________________
+
+    def test_radix_match_counts_tokens() -> None:
+        tree = PrefixRadixTree(chunk_size=4, default_ttl=100.0)
+        tree.insert_prefix([1, 2, 3, 4, 5, 6, 7, 8], worker_id="gpu-0", now=10.0)
+        worker, matched = tree.match_prefix([1, 2, 3, 4, 5, 6, 7, 8], now=20.0)
+        assert worker == "gpu-0"
+>       assert matched == 8
+E       assert 2 == 8
+
+tests\test_radix.py:108: AssertionError
+_____________________ test_scheduler_flushes_partial_tail _____________________
+
+    def test_scheduler_flushes_partial_tail() -> None:
+        sched = ContinuousBatchScheduler(max_batch_size=3, max_batch_tokens=4096)
+        for i in range(5):
+            sched.enqueue(BatchRequest(f"req-{i}", prompt_tokens=100, priority=5 - i))
+        batches = sched.drain_all_batches(flush_partial=True)
+>       assert len(batches) == 2
+E       AssertionError: assert 1 == 2
+E        +  where 1 = len([[BatchRequest(request_id='req-0', prompt_tokens=100, priority=5, prefix_hash=''), BatchRequest(request_id='req-1', prompt_tokens=100, priority=4, prefix_hash=''), BatchRequest(request_id='req-2', prompt_tokens=100, priority=3, prefix_hash='')]])
+
+tests\test_scheduler.py:75: AssertionError
+____________________ test_telemetry_hit_rate_is_percentage ____________________
+
+    def test_telemetry_hit_rate_is_percentage() -> None:
+        win = LatencyWindow()
+        win.record(ttft_ms=100.0, prompt_tokens=1000, cached_tokens=0, cache_hit=False)
+        win.record(ttft_ms=200.0, prompt_tokens=1000, cached_tokens=500, cache_hit=True)
+        s = win.summary()
+>       assert s["hit_rate_pct"] == 50.0
+E       assert 0.5 == 50.0
+
+tests\test_telemetry.py:77: AssertionError
+__________________ test_telemetry_token_reuse_is_percentage ___________________
+
+    def test_telemetry_token_reuse_is_percentage() -> None:
+        win = LatencyWindow()
+        win.record(ttft_ms=100.0, prompt_tokens=1000, cached_tokens=0, cache_hit=False)
+        win.record(ttft_ms=200.0, prompt_tokens=1000, cached_tokens=900, cache_hit=True)
+        s = win.summary()
+>       assert s["token_reuse_pct"] == 45.0
+E       assert 0.45 == 45.0
+
+tests\test_telemetry.py:85: AssertionError
+============================== slowest durations ==============================
+0.00s setup    tests/test_codec.py::test_codec_ignores_comments_and_blank_lines
+0.00s call     tests/test_pipeline.py::test_pipeline_records_latency_in_ms
+0.00s call     tests/test_pipeline.py::test_pipeline_admits_all_requests_including_tail
+0.00s call     tests/test_telemetry.py::test_telemetry_token_reuse_is_percentage
+0.00s call     tests/test_limiter.py::test_limiter_starts_empty_by_default
+0.00s call     tests/test_limiter.py::test_limiter_invalid_configuration
+0.00s call     tests/test_pipeline.py::test_pipeline_routes_to_warm_worker
+0.00s teardown tests/test_limiter.py::test_limiter_starts_empty_by_default
+0.00s call     tests/test_limiter.py::test_limiter_insufficient_tokens_returns_exact_wait_time
+0.00s setup    tests/test_units.py::test_to_ms_conversion
+0.00s call     tests/test_scheduler.py::test_scheduler_flushes_partial_tail
+0.00s call     tests/test_scheduler.py::test_scheduler_request_exceeding_max_batch_tokens_raises
+0.00s call     tests/test_units.py::test_to_ms_conversion
+0.00s call     tests/test_radix.py::test_radix_match_counts_tokens
+0.00s teardown tests/test_telemetry.py::test_telemetry_token_reuse_is_percentage
+0.00s call     tests/test_telemetry.py::test_telemetry_invalid_max_samples
+0.00s call     tests/test_radix.py::test_radix_invalid_chunk_size
+0.00s setup    tests/test_units.py::test_safe_ratio_valid_fractions
+0.00s setup    tests/test_units.py::test_safe_ratio_zero_denominator
+0.00s teardown tests/test_units.py::test_safe_ratio_bounds
+0.00s call     tests/test_limiter.py::test_limiter_monotonic_clock_guard
+0.00s call     tests/test_codec.py::test_codec_concatenates_single_tool_call_arguments_across_chunks
+0.00s call     tests/test_telemetry.py::test_telemetry_invalid_percentile_range
+0.00s call     tests/test_telemetry.py::test_telemetry_hit_rate_is_percentage
+0.00s call     tests/test_codec.py::test_codec_ignores_comments_and_blank_lines
+0.00s setup    tests/test_units.py::test_safe_ratio_bounds
+0.00s call     tests/test_units.py::test_safe_ratio_valid_fractions
+0.00s teardown tests/test_units.py::test_safe_ratio_valid_fractions
+0.00s teardown tests/test_units.py::test_to_ms_conversion
+0.00s call     tests/test_limiter.py::test_limiter_negative_request_raises
+0.00s teardown tests/test_units.py::test_safe_ratio_zero_denominator
+0.00s setup    tests/test_pipeline.py::test_pipeline_records_latency_in_ms
+0.00s call     tests/test_units.py::test_safe_ratio_zero_denominator
+0.00s call     tests/test_units.py::test_safe_ratio_bounds
+0.00s call     tests/test_codec.py::test_codec_assembles_content_and_reasoning_deltas
+0.00s teardown tests/test_scheduler.py::test_scheduler_flushes_partial_tail
+0.00s teardown tests/test_codec.py::test_codec_ignores_comments_and_blank_lines
+0.00s setup    tests/test_codec.py::test_codec_handles_done_sentinel
+0.00s setup    tests/test_telemetry.py::test_telemetry_invalid_max_samples
+0.00s teardown tests/test_pipeline.py::test_pipeline_records_latency_in_ms
+0.00s setup    tests/test_pipeline.py::test_pipeline_immediate_startup_admission
+0.00s teardown tests/test_pipeline.py::test_pipeline_routes_to_warm_worker
+0.00s call     tests/test_codec.py::test_codec_handles_interleaved_multi_tool_calls
+0.00s setup    tests/test_pipeline.py::test_pipeline_admits_all_requests_including_tail
+0.00s setup    tests/test_pipeline.py::test_pipeline_does_not_route_below_threshold
+0.00s setup    tests/test_radix.py::test_radix_release_prefix_decrements_ref_count
+0.00s teardown tests/test_radix.py::test_radix_match_counts_tokens
+0.00s teardown tests/test_pipeline.py::test_pipeline_admits_all_requests_including_tail
+0.00s call     tests/test_pipeline.py::test_pipeline_immediate_startup_admission
+0.00s teardown tests/test_telemetry.py::test_telemetry_hit_rate_is_percentage
+0.00s setup    tests/test_scheduler.py::test_scheduler_invalid_limits
+0.00s call     tests/test_telemetry.py::test_telemetry_ten_sample_nearest_rank_percentiles
+0.00s setup    tests/test_telemetry.py::test_telemetry_token_reuse_is_percentage
+0.00s setup    tests/test_codec.py::test_codec_assembles_content_and_reasoning_deltas
+0.00s setup    tests/test_limiter.py::test_limiter_invalid_configuration
+0.00s setup    tests/test_pipeline.py::test_pipeline_routes_to_warm_worker
+0.00s call     tests/test_scheduler.py::test_scheduler_invalid_limits
+0.00s setup    tests/test_scheduler.py::test_scheduler_request_exceeding_max_batch_tokens_raises
+0.00s setup    tests/test_telemetry.py::test_telemetry_rejects_negative_metrics
+0.00s setup    tests/test_codec.py::test_codec_concatenates_single_tool_call_arguments_across_chunks
+0.00s call     tests/test_codec.py::test_codec_extracts_top_level_prompt_cache_hit_tokens
+0.00s setup    tests/test_telemetry.py::test_telemetry_single_sample_percentiles_do_not_overflow
+0.00s setup    tests/test_pipeline.py::test_pipeline_cold_route_returns_none
+0.00s setup    tests/test_radix.py::test_radix_invalid_chunk_size
+0.00s setup    tests/test_telemetry.py::test_telemetry_ten_sample_nearest_rank_percentiles
+0.00s setup    tests/test_telemetry.py::test_telemetry_empty_window_summary_and_percentile
+0.00s setup    tests/test_radix.py::test_radix_partial_chunk_truncation
+0.00s setup    tests/test_codec.py::test_codec_handles_interleaved_multi_tool_calls
+0.00s setup    tests/test_telemetry.py::test_telemetry_filtered_empty_window_returns_zero_without_division_error
+0.00s setup    tests/test_limiter.py::test_limiter_request_exceeding_capacity_returns_inf_wait
+0.00s setup    tests/test_scheduler.py::test_scheduler_fifo_order_for_equal_priority
+0.00s setup    tests/test_limiter.py::test_limiter_insufficient_tokens_returns_exact_wait_time
+0.00s setup    tests/test_limiter.py::test_limiter_caps_at_capacity
+0.00s setup    tests/test_limiter.py::test_limiter_initial_full_capacity_acquire
+0.00s setup    tests/test_radix.py::test_radix_insert_and_exact_match
+0.00s call     tests/test_telemetry.py::test_telemetry_rejects_negative_metrics
+0.00s call     tests/test_telemetry.py::test_telemetry_single_sample_percentiles_do_not_overflow
+0.00s teardown tests/test_codec.py::test_codec_handles_done_sentinel
+0.00s setup    tests/test_codec.py::test_codec_extracts_nested_cached_tokens_usage
+0.00s setup    tests/test_scheduler.py::test_scheduler_priority_preemption_over_fifo
+0.00s setup    tests/test_telemetry.py::test_telemetry_hit_rate_is_percentage
+0.00s call     tests/test_pipeline.py::test_pipeline_does_not_route_below_threshold
+0.00s call     tests/test_scheduler.py::test_scheduler_drain_all_retains_partial_remainder_when_false
+0.00s setup    tests/test_radix.py::test_radix_ttl_expiration_blocks_match
+0.00s setup    tests/test_limiter.py::test_utilization_is_fraction
+0.00s setup    tests/test_radix.py::test_radix_evict_expired_leaf_preserves_shared_parent_ref_count
+0.00s setup    tests/test_pipeline.py::test_pipeline_empty_admission
+0.00s setup    tests/test_radix.py::test_radix_short_sequence_below_chunk_size
+0.00s setup    tests/test_codec.py::test_codec_extracts_top_level_prompt_cache_hit_tokens
+0.00s setup    tests/test_limiter.py::test_limiter_monotonic_clock_guard
+0.00s setup    tests/test_scheduler.py::test_scheduler_drain_all_retains_partial_remainder_when_false
+0.00s setup    tests/test_telemetry.py::test_telemetry_ring_buffer_evicts_oldest
+0.00s setup    tests/test_scheduler.py::test_scheduler_drain_all_exact_multiple
+0.00s setup    tests/test_scheduler.py::test_scheduler_batch_token_budget_packing
+0.00s setup    tests/test_limiter.py::test_limiter_negative_request_raises
+0.00s setup    tests/test_limiter.py::test_limiter_starts_empty_by_default
+0.00s setup    tests/test_telemetry.py::test_telemetry_invalid_percentile_range
+0.00s setup    tests/test_codec.py::test_codec_preserves_usage_when_later_chunk_has_no_usage
+0.00s call     tests/test_codec.py::test_codec_preserves_usage_when_later_chunk_has_no_usage
+0.00s setup    tests/test_scheduler.py::test_scheduler_flushes_partial_tail
+0.00s call     tests/test_codec.py::test_codec_handles_done_sentinel
+0.00s setup    tests/test_radix.py::test_radix_evict_deep_chain_updates_all_ancestors_once
+0.00s call     tests/test_radix.py::test_radix_evict_expired_leaf_preserves_shared_parent_ref_count
+0.00s setup    tests/test_radix.py::test_radix_release_floors_at_zero
+0.00s call     tests/test_codec.py::test_codec_extracts_nested_cached_tokens_usage
+0.00s setup    tests/test_radix.py::test_radix_match_counts_tokens
+0.00s call     tests/test_radix.py::test_radix_evict_deep_chain_updates_all_ancestors_once
+0.00s call     tests/test_radix.py::test_radix_release_prefix_decrements_ref_count
+0.00s teardown tests/test_codec.py::test_codec_concatenates_single_tool_call_arguments_across_chunks
+0.00s teardown tests/test_telemetry.py::test_telemetry_invalid_max_samples
+0.00s teardown tests/test_scheduler.py::test_scheduler_invalid_limits
+0.00s call     tests/test_scheduler.py::test_scheduler_drain_all_exact_multiple
+0.00s call     tests/test_radix.py::test_radix_ttl_expiration_blocks_match
+0.00s teardown tests/test_codec.py::test_codec_assembles_content_and_reasoning_deltas
+0.00s teardown tests/test_limiter.py::test_limiter_invalid_configuration
+0.00s teardown tests/test_pipeline.py::test_pipeline_immediate_startup_admission
+0.00s call     tests/test_radix.py::test_radix_release_floors_at_zero
+0.00s teardown tests/test_pipeline.py::test_pipeline_does_not_route_below_threshold
+0.00s call     tests/test_radix.py::test_radix_insert_and_exact_match
+0.00s call     tests/test_limiter.py::test_utilization_is_fraction
+0.00s teardown tests/test_limiter.py::test_limiter_request_exceeding_capacity_returns_inf_wait
+0.00s call     tests/test_scheduler.py::test_scheduler_fifo_order_for_equal_priority
+0.00s call     tests/test_radix.py::test_radix_partial_chunk_truncation
+0.00s teardown tests/test_scheduler.py::test_scheduler_request_exceeding_max_batch_tokens_raises
+0.00s teardown tests/test_radix.py::test_radix_insert_and_exact_match
+0.00s teardown tests/test_radix.py::test_radix_short_sequence_below_chunk_size
+0.00s teardown tests/test_limiter.py::test_utilization_is_fraction
+0.00s call     tests/test_pipeline.py::test_pipeline_cold_route_returns_none
+0.00s teardown tests/test_radix.py::test_radix_invalid_chunk_size
+0.00s call     tests/test_limiter.py::test_limiter_initial_full_capacity_acquire
+0.00s teardown tests/test_telemetry.py::test_telemetry_rejects_negative_metrics
+0.00s teardown tests/test_telemetry.py::test_telemetry_invalid_percentile_range
+0.00s call     tests/test_telemetry.py::test_telemetry_ring_buffer_evicts_oldest
+0.00s teardown tests/test_limiter.py::test_limiter_negative_request_raises
+0.00s call     tests/test_scheduler.py::test_scheduler_priority_preemption_over_fifo
+0.00s teardown tests/test_radix.py::test_radix_release_floors_at_zero
+0.00s teardown tests/test_scheduler.py::test_scheduler_drain_all_retains_partial_remainder_when_false
+0.00s teardown tests/test_limiter.py::test_limiter_monotonic_clock_guard
+0.00s teardown tests/test_codec.py::test_codec_handles_interleaved_multi_tool_calls
+0.00s teardown tests/test_telemetry.py::test_telemetry_filtered_empty_window_returns_zero_without_division_error
+0.00s teardown tests/test_limiter.py::test_limiter_insufficient_tokens_returns_exact_wait_time
+0.00s teardown tests/test_radix.py::test_radix_partial_chunk_truncation
+0.00s teardown tests/test_telemetry.py::test_telemetry_single_sample_percentiles_do_not_overflow
+0.00s call     tests/test_scheduler.py::test_scheduler_batch_token_budget_packing
+0.00s call     tests/test_telemetry.py::test_telemetry_empty_window_summary_and_percentile
+0.00s call     tests/test_limiter.py::test_limiter_request_exceeding_capacity_returns_inf_wait
+0.00s teardown tests/test_radix.py::test_radix_release_prefix_decrements_ref_count
+0.00s teardown tests/test_codec.py::test_codec_preserves_usage_when_later_chunk_has_no_usage
+0.00s teardown tests/test_pipeline.py::test_pipeline_cold_route_returns_none
+0.00s teardown tests/test_radix.py::test_radix_evict_deep_chain_updates_all_ancestors_once
+0.00s teardown tests/test_pipeline.py::test_pipeline_empty_admission
+0.00s teardown tests/test_scheduler.py::test_scheduler_fifo_order_for_equal_priority
+0.00s teardown tests/test_limiter.py::test_limiter_caps_at_capacity
+0.00s teardown tests/test_scheduler.py::test_scheduler_priority_preemption_over_fifo
+0.00s teardown tests/test_radix.py::test_radix_evict_expired_leaf_preserves_shared_parent_ref_count
+0.00s teardown tests/test_telemetry.py::test_telemetry_empty_window_summary_and_percentile
+0.00s call     tests/test_telemetry.py::test_telemetry_filtered_empty_window_returns_zero_without_division_error
+0.00s teardown tests/test_limiter.py::test_limiter_initial_full_capacity_acquire
+0.00s teardown tests/test_codec.py::test_codec_extracts_nested_cached_tokens_usage
+0.00s teardown tests/test_scheduler.py::test_scheduler_drain_all_exact_multiple
+0.00s teardown tests/test_telemetry.py::test_telemetry_ten_sample_nearest_rank_percentiles
+0.00s call     tests/test_pipeline.py::test_pipeline_empty_admission
+0.00s teardown tests/test_radix.py::test_radix_ttl_expiration_blocks_match
+0.00s teardown tests/test_scheduler.py::test_scheduler_batch_token_budget_packing
+0.00s call     tests/test_limiter.py::test_limiter_caps_at_capacity
+0.00s teardown tests/test_codec.py::test_codec_extracts_top_level_prompt_cache_hit_tokens
+0.00s teardown tests/test_telemetry.py::test_telemetry_ring_buffer_evicts_oldest
+0.00s call     tests/test_radix.py::test_radix_short_sequence_below_chunk_size
+=========================== short test summary info ===========================
+FAILED tests/test_limiter.py::test_limiter_starts_empty_by_default - assert 100.0 == 0.0
+ +  where 100.0 = available_tokens(now=0.0)
+ +    where available_tokens = <tensorroute.limiter.TokenBucketLimiter object at 0x000001D632D254C0>.available_tokens
+FAILED tests/test_pipeline.py::test_pipeline_records_latency_in_ms - assert 0.2 == 200.0 ± 2.0e-04
+  
+  comparison failed
+  Obtained: 0.2
+  Expected: 200.0 ± 2.0e-04
+FAILED tests/test_pipeline.py::test_pipeline_admits_all_requests_including_tail - AssertionError: assert ['r0', 'r1', 'r2', 'r3'] == ['r0', 'r1', 'r2', 'r3', 'r4']
+  
+  Right contains one more item: 'r4'
+  
+  Full diff:
+    [
+        'r0',
+        'r1',
+        'r2',
+        'r3',
+  -     'r4',
+    ]
+FAILED tests/test_pipeline.py::test_pipeline_routes_to_warm_worker - AssertionError: assert None == 'gpu-warm'
+FAILED tests/test_radix.py::test_radix_match_counts_tokens - assert 2 == 8
+FAILED tests/test_scheduler.py::test_scheduler_flushes_partial_tail - AssertionError: assert 1 == 2
+ +  where 1 = len([[BatchRequest(request_id='req-0', prompt_tokens=100, priority=5, prefix_hash=''), BatchRequest(request_id='req-1', prompt_tokens=100, priority=4, prefix_hash=''), BatchRequest(request_id='req-2', prompt_tokens=100, priority=3, prefix_hash='')]])
+FAILED tests/test_telemetry.py::test_telemetry_hit_rate_is_percentage - assert 0.5 == 50.0
+FAILED tests/test_telemetry.py::test_telemetry_token_reuse_is_percentage - assert 0.45 == 45.0
+======================== 8 failed, 48 passed in 0.20s =========================

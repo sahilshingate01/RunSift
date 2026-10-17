@@ -1,0 +1,40 @@
+[cf: TOOL EXECUTION SUMMARY :: bash_exec, 121 lines (3604 bytes)]
+[cf: Critical failure excerpt (21 matches)]
+FATAL ERROR: NullPointerException at module.py line 402
+Traceback frame 0
+Traceback frame 1
+Traceback frame 2
+Traceback frame 3
+Traceback frame 4
+[cf: Output head]
+Step 0: processing item 0...
+Step 1: processing item 10...
+Step 2: processing item 20...
+Step 3: processing item 30...
+Step 4: processing item 40...
+Step 5: processing item 50...
+Step 6: processing item 60...
+Step 7: processing item 70...
+Step 8: processing item 80...
+Step 9: processing item 90...
+Step 10: processing item 100...
+Step 11: processing item 110...
+[cf: 93 lines omitted by RunSift]
+[cf: Output tail]
+Traceback frame 4
+Traceback frame 5
+Traceback frame 6
+Traceback frame 7
+Traceback frame 8
+Traceback frame 9
+Traceback frame 10
+Traceback frame 11
+Traceback frame 12
+Traceback frame 13
+Traceback frame 14
+Traceback frame 15
+Traceback frame 16
+Traceback frame 17
+Traceback frame 18
+Traceback frame 19
+<!-- cf:v2 -->

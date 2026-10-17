@@ -1,0 +1,4 @@
+[COMPACTED TOOL OUTPUT :: database_query]
+{"_runsift_summary":"Array of 50 items (compacted)","claim":"Tool 'database_query' returned 50 structured records","measurement":"Retained 3 representative records; pruned 47 entries (4780 bytes raw)","reopen_condition":"Query specific item ID or narrow filter parameters if omitted records are required","total_count":50,"sample":[{"id":0,"data":"record_0","extra":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"},{"id":1,"data":"record_1","extra":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"},{"id":2,"data":"record_2","extra":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}]}
+<!-- 47 items omitted to preserve KV-cache -->
+<!-- cf:compacted -->

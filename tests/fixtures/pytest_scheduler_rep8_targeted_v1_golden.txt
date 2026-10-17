@@ -1,0 +1,72 @@
+[COMPACTED PYTEST OUTPUT]
+Requested target 'tests/test_codec.py': FAILED (2 failed, 7 passed)
+Test Files Summary:
+- tests/test_codec.py: 7 passed, 2 failed
+- tests/test_limiter.py: 7 passed, 2 failed
+- tests/test_radix.py: 9 passed, 0 failed
+- tests/test_scheduler.py: 8 passed, 1 failed
+- tests/test_telemetry.py: 6 passed, 3 failed
+
+--- [Failures] ---
+______ test_codec_concatenates_single_tool_call_arguments_across_chunks _______
+>       assert json.loads(tc["function"]["arguments"]) == {"path": "src/radix.py", "limit": 50}
+tests\test_codec.py:47:
+>           return _default_decoder.decode(s)
+>           raise JSONDecodeError("Extra data", s, end)
+E           json.decoder.JSONDecodeError: Extra data: line 1 column 8 (char 7)
+_____________ test_codec_concatenates_multiple_indexed_tool_calls _____________
+>       assert json.loads(res["tool_calls"][0]["function"]["arguments"]) == {"cmd": "pytest"}
+tests\test_codec.py:62:
+>           return _default_decoder.decode(s)
+>           raise JSONDecodeError("Extra data", s, end)
+E           json.decoder.JSONDecodeError: Extra data: line 1 column 10 (char 9)
+__________________ test_limiter_subsecond_fractional_refill ___________________
+>       assert lim.available_tokens(now=1.25) == pytest.approx(50.0)
+E       assert 0.0 == 50.0 ± 5.0e-05
+E         comparison failed
+E         Obtained: 0.0
+E         Expected: 50.0 ± 5.0e-05
+tests\test_limiter.py:36: AssertionError
+_________ test_limiter_multiple_subsecond_ticks_accumulate_accurately _________
+>       assert lim.available_tokens(now=0.5) == pytest.approx(50.0)
+E       assert 0.0 == 50.0 ± 5.0e-05
+E         comparison failed
+E         Obtained: 0.0
+E         Expected: 50.0 ± 5.0e-05
+tests\test_limiter.py:53: AssertionError
+________ test_scheduler_drain_all_retains_partial_remainder_when_false ________
+>       assert len(batches) == 1
+E       AssertionError: assert 2 == 1
+E        +  where 2 = len([[BatchRequest(request_id='req-0', prompt_tokens=100, priority=10, prefix_hash=''), BatchRequest(request_id='req-1', prompt_tokens=100, priority=9, prefix_hash=''), BatchRequest(request_id='req-2', prompt_tokens=100, priority=8, prefix_hash='')], [BatchRequest(request_id='r
+tests\test_scheduler.py:72: AssertionError
+__________ test_telemetry_single_sample_percentiles_do_not_overflow ___________
+>       assert win.percentile_ttft(50.0) == 425.5
+tests\test_telemetry.py:33:
+>       return round(filtered[idx], 3)
+E       IndexError: list index out of range
+src\tensorroute\telemetry.py:70: IndexError
+_____________ test_telemetry_ten_sample_nearest_rank_percentiles ______________
+>       assert win.percentile_ttft(50.0) == 500.0
+E       assert 600.0 == 500.0
+E        +  where 600.0 = percentile_ttft(50.0)
+E        +    where percentile_ttft = <tensorroute.telemetry.LatencyWindow object at 0x000002222817E600>.percentile_ttft
+tests\test_telemetry.py:54: AssertionError
+___________________ test_telemetry_token_reuse_and_hit_rate ___________________
+>       s = win.summary()
+tests\test_telemetry.py:71:
+>           "p95_ttft_ms": self.percentile_ttft(95.0, min_ttft_ms=min_ttft_ms),
+src\tensorroute\telemetry.py:96:
+>       return round(filtered[idx], 3)
+E       IndexError: list index out of range
+src\tensorroute\telemetry.py:70: IndexError
+FAILED tests/test_codec.py::test_codec_concatenates_single_tool_call_arguments_across_chunks - json.decoder.JSONDecodeError: Extra data: line 1 column 8 (char 7)
+FAILED tests/test_codec.py::test_codec_concatenates_multiple_indexed_tool_calls - json.decoder.JSONDecodeError: Extra data: line 1 column 10 (char 9)
+FAILED tests/test_limiter.py::test_limiter_subsecond_fractional_refill - assert 0.0 == 50.0 ± 5.0e-05
+FAILED tests/test_limiter.py::test_limiter_multiple_subsecond_ticks_accumulate_accurately - assert 0.0 == 50.0 ± 5.0e-05
+FAILED tests/test_scheduler.py::test_scheduler_drain_all_retains_partial_remainder_when_false - AssertionError: assert 2 == 1
+FAILED tests/test_telemetry.py::test_telemetry_single_sample_percentiles_do_not_overflow - IndexError: list index out of range
+FAILED tests/test_telemetry.py::test_telemetry_ten_sample_nearest_rank_percentiles - assert 600.0 == 500.0
+FAILED tests/test_telemetry.py::test_telemetry_token_reuse_and_hit_rate - IndexError: list index out of range
+
+======================== 8 failed, 37 passed in 0.25s =========================
+<!-- cf:compacted -->

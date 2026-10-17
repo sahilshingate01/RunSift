@@ -1,0 +1,14 @@
+============================= test session starts =============================
+platform linux -- Python 3.12.8, pytest-9.1.1, pluggy-1.6.0
+cachedir: .pytest_cache
+collecting ... collected 12 items
+
+tests/test_alpha.py::test_alpha_init PASSED                              [  8%]
+tests/test_alpha.py::test_alpha_step FAILED                              [ 16%]
+tests/test_alpha.py::test_alpha_reset PASSED                             [ 25%]
+tests/test_beta.py::test_beta_enqueue PASSED                             [ 33%]
+tests/test_beta.py::test_beta_drain_full PASSED                          [ 41%]
+tests/test_beta.py::test_beta_drain_retains_partial_when_false 
+
+
+[TIMEOUT] pytest exceeded 35s limit (possible infinite loop or hang in workspace code).

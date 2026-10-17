@@ -1,0 +1,26 @@
+[TOOL EXECUTION SUMMARY :: bash_exec]
+- Claim: Tool 'bash_exec' emitted 121 lines (3604 bytes)
+- Measurement (Critical Diagnostic, 21 matches): FATAL ERROR: NullPointerException at module.py line 402
+
+--- [Critical Failure Excerpt] ---
+FATAL ERROR: NullPointerException at module.py line 402
+Traceback frame 0
+Traceback frame 1
+Traceback frame 2
+Traceback frame 3
+Traceback frame 4
+- Reopen Condition: Re-invoke 'bash_exec' with targeted line filter if middle 115 lines are needed
+
+--- [Output Head] ---
+Step 0: processing item 0...
+Step 1: processing item 10...
+Step 2: processing item 20...
+
+<!-- ... 115 lines omitted by RunSift ... -->
+
+--- [Output Tail] ---
+Traceback frame 17
+Traceback frame 18
+Traceback frame 19
+
+<!-- cf:compacted -->
