@@ -1,0 +1,28 @@
+...FF.......FF...........FF......FFF...F.F.F.                            [100%]
+================================== FAILURES ===================================
+C:\Python313\Lib\json\decoder.py:348: json.decoder.JSONDecodeError: Extra data: line 1 column 8 (char 7)
+C:\Python313\Lib\json\decoder.py:348: json.decoder.JSONDecodeError: Extra data: line 1 column 10 (char 9)
+<workspace>\tests\test_limiter.py:36: assert 0.0 == 50.0 ± 5.0e-05
+<workspace>\tests\test_limiter.py:53: assert 0.0 == 50.0 ± 5.0e-05
+<workspace>\tests\test_radix.py:89: AssertionError: assert 0 == 1
+<workspace>\tests\test_radix.py:106: AssertionError: assert 1 == 2
+<workspace>\tests\test_scheduler.py:61: AssertionError: assert 1 == 2
+<workspace>\tests\test_scheduler.py:72: assert 0 == 1
+<workspace>\tests\test_scheduler.py:84: assert 0 == 1
+<workspace>\src\tensorroute\telemetry.py:70: IndexError: list index out of range
+<workspace>\tests\test_telemetry.py:54: assert 600.0 == 500.0
+<workspace>\src\tensorroute\telemetry.py:70: IndexError: list index out of range
+=========================== short test summary info ===========================
+FAILED tests/test_codec.py::test_codec_concatenates_single_tool_call_arguments_across_chunks
+FAILED tests/test_codec.py::test_codec_concatenates_multiple_indexed_tool_calls
+FAILED tests/test_limiter.py::test_limiter_subsecond_fractional_refill - asse...
+FAILED tests/test_limiter.py::test_limiter_multiple_subsecond_ticks_accumulate_accurately
+FAILED tests/test_radix.py::test_radix_evict_expired_leaf_preserves_shared_parent_ref_count
+FAILED tests/test_radix.py::test_radix_evict_deep_chain_updates_all_ancestors_once
+FAILED tests/test_scheduler.py::test_scheduler_drain_all_flushes_partial_remainder_when_true
+FAILED tests/test_scheduler.py::test_scheduler_drain_all_retains_partial_remainder_when_false
+FAILED tests/test_scheduler.py::test_scheduler_drain_single_item_with_flush_partial_true
+FAILED tests/test_telemetry.py::test_telemetry_single_sample_percentiles_do_not_overflow
+FAILED tests/test_telemetry.py::test_telemetry_ten_sample_nearest_rank_percentiles
+FAILED tests/test_telemetry.py::test_telemetry_token_reuse_and_hit_rate - Ind...
+12 failed, 33 passed in 0.05s

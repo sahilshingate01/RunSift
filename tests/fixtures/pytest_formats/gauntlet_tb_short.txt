@@ -1,0 +1,114 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.6, pytest-8.4.2, pluggy-1.6.0
+rootdir: <workspace>
+plugins: anyio-4.14.2, asyncio-1.2.0, xdist-3.8.0
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 45 items
+
+tests\test_codec.py ...FF....                                            [ 20%]
+tests\test_limiter.py ...FF....                                          [ 40%]
+tests\test_radix.py .......FF                                            [ 60%]
+tests\test_scheduler.py ......FFF                                        [ 80%]
+tests\test_telemetry.py ...F.F.F.                                        [100%]
+
+================================== FAILURES ===================================
+______ test_codec_concatenates_single_tool_call_arguments_across_chunks _______
+tests\test_codec.py:47: in test_codec_concatenates_single_tool_call_arguments_across_chunks
+    assert json.loads(tc["function"]["arguments"]) == {"path": "src/radix.py", "limit": 50}
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Python313\Lib\json\__init__.py:346: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Python313\Lib\json\decoder.py:348: in decode
+    raise JSONDecodeError("Extra data", s, end)
+E   json.decoder.JSONDecodeError: Extra data: line 1 column 8 (char 7)
+_____________ test_codec_concatenates_multiple_indexed_tool_calls _____________
+tests\test_codec.py:62: in test_codec_concatenates_multiple_indexed_tool_calls
+    assert json.loads(res["tool_calls"][0]["function"]["arguments"]) == {"cmd": "pytest"}
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Python313\Lib\json\__init__.py:346: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Python313\Lib\json\decoder.py:348: in decode
+    raise JSONDecodeError("Extra data", s, end)
+E   json.decoder.JSONDecodeError: Extra data: line 1 column 10 (char 9)
+__________________ test_limiter_subsecond_fractional_refill ___________________
+tests\test_limiter.py:36: in test_limiter_subsecond_fractional_refill
+    assert lim.available_tokens(now=1.25) == pytest.approx(50.0)
+E   assert 0.0 == 50.0 ± 5.0e-05
+E     
+E     comparison failed
+E     Obtained: 0.0
+E     Expected: 50.0 ± 5.0e-05
+_________ test_limiter_multiple_subsecond_ticks_accumulate_accurately _________
+tests\test_limiter.py:53: in test_limiter_multiple_subsecond_ticks_accumulate_accurately
+    assert lim.available_tokens(now=0.5) == pytest.approx(50.0)
+E   assert 0.0 == 50.0 ± 5.0e-05
+E     
+E     comparison failed
+E     Obtained: 0.0
+E     Expected: 50.0 ± 5.0e-05
+_______ test_radix_evict_expired_leaf_preserves_shared_parent_ref_count _______
+tests\test_radix.py:89: in test_radix_evict_expired_leaf_preserves_shared_parent_ref_count
+    assert shared_parent.ref_count == 1
+E   AssertionError: assert 0 == 1
+E    +  where 0 = RadixNode(token_chunk=(1, 2, 3, 4), worker_id='gpu-b', ref_count=0, last_access_ts=15.0, ttl_seconds=200.0, children={...chunk=(), worker_id='', ref_count=0, last_access_ts=0.0, ttl_seconds=300.0, children={(1, 2, 3, 4): ...}, parent=None)).ref_count
+___________ test_radix_evict_deep_chain_updates_all_ancestors_once ____________
+tests\test_radix.py:106: in test_radix_evict_deep_chain_updates_all_ancestors_once
+    assert n1.ref_count == 2
+E   AssertionError: assert 1 == 2
+E    +  where 1 = RadixNode(token_chunk=(1, 2), worker_id='gpu-0', ref_count=1, last_access_ts=10.0, ttl_seconds=10.0, children={(3, 4):...token_chunk=(), worker_id='', ref_count=0, last_access_ts=0.0, ttl_seconds=300.0, children={(1, 2): ...}, parent=None)).ref_count
+________ test_scheduler_drain_all_flushes_partial_remainder_when_true _________
+tests\test_scheduler.py:61: in test_scheduler_drain_all_flushes_partial_remainder_when_true
+    assert len(batches) == 2
+E   AssertionError: assert 1 == 2
+E    +  where 1 = len([[BatchRequest(request_id='req-0', prompt_tokens=100, priority=5, prefix_hash=''), BatchRequest(request_id='req-1', pr...ens=100, priority=4, prefix_hash=''), BatchRequest(request_id='req-2', prompt_tokens=100, priority=3, prefix_hash='')]])
+________ test_scheduler_drain_all_retains_partial_remainder_when_false ________
+tests\test_scheduler.py:72: in test_scheduler_drain_all_retains_partial_remainder_when_false
+    assert len(batches) == 1
+E   assert 0 == 1
+E    +  where 0 = len([])
+__________ test_scheduler_drain_single_item_with_flush_partial_true ___________
+tests\test_scheduler.py:84: in test_scheduler_drain_single_item_with_flush_partial_true
+    assert len(batches) == 1
+E   assert 0 == 1
+E    +  where 0 = len([])
+__________ test_telemetry_single_sample_percentiles_do_not_overflow ___________
+tests\test_telemetry.py:33: in test_telemetry_single_sample_percentiles_do_not_overflow
+    assert win.percentile_ttft(50.0) == 425.5
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+src\tensorroute\telemetry.py:70: in percentile_ttft
+    return round(filtered[idx], 3)
+                 ^^^^^^^^^^^^^
+E   IndexError: list index out of range
+_____________ test_telemetry_ten_sample_nearest_rank_percentiles ______________
+tests\test_telemetry.py:54: in test_telemetry_ten_sample_nearest_rank_percentiles
+    assert win.percentile_ttft(50.0) == 500.0
+E   assert 600.0 == 500.0
+E    +  where 600.0 = percentile_ttft(50.0)
+E    +    where percentile_ttft = <tensorroute.telemetry.LatencyWindow object at 0x000001EC2078AD50>.percentile_ttft
+___________________ test_telemetry_token_reuse_and_hit_rate ___________________
+tests\test_telemetry.py:71: in test_telemetry_token_reuse_and_hit_rate
+    s = win.summary()
+        ^^^^^^^^^^^^^
+src\tensorroute\telemetry.py:96: in summary
+    "p95_ttft_ms": self.percentile_ttft(95.0, min_ttft_ms=min_ttft_ms),
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\tensorroute\telemetry.py:70: in percentile_ttft
+    return round(filtered[idx], 3)
+                 ^^^^^^^^^^^^^
+E   IndexError: list index out of range
+=========================== short test summary info ===========================
+FAILED tests/test_codec.py::test_codec_concatenates_single_tool_call_arguments_across_chunks
+FAILED tests/test_codec.py::test_codec_concatenates_multiple_indexed_tool_calls
+FAILED tests/test_limiter.py::test_limiter_subsecond_fractional_refill - asse...
+FAILED tests/test_limiter.py::test_limiter_multiple_subsecond_ticks_accumulate_accurately
+FAILED tests/test_radix.py::test_radix_evict_expired_leaf_preserves_shared_parent_ref_count
+FAILED tests/test_radix.py::test_radix_evict_deep_chain_updates_all_ancestors_once
+FAILED tests/test_scheduler.py::test_scheduler_drain_all_flushes_partial_remainder_when_true
+FAILED tests/test_scheduler.py::test_scheduler_drain_all_retains_partial_remainder_when_false
+FAILED tests/test_scheduler.py::test_scheduler_drain_single_item_with_flush_partial_true
+FAILED tests/test_telemetry.py::test_telemetry_single_sample_percentiles_do_not_overflow
+FAILED tests/test_telemetry.py::test_telemetry_ten_sample_nearest_rank_percentiles
+FAILED tests/test_telemetry.py::test_telemetry_token_reuse_and_hit_rate - Ind...
+======================== 12 failed, 33 passed in 0.11s ========================

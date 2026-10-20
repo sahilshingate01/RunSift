@@ -1,0 +1,48 @@
+...F
+================================== FAILURES ===================================
+______ test_codec_concatenates_single_tool_call_arguments_across_chunks _______
+
+    def test_codec_concatenates_single_tool_call_arguments_across_chunks() -> None:
+        asm = SSEChunkAssembler()
+        chunks = [
+            {"choices": [{"delta": {"tool_calls": [{"index": 0, "id": "call_abc", "function": {"name": "read_file", "arguments": '{"path": '}}]}}]},
+            {"choices": [{"delta": {"tool_calls": [{"index": 0, "function": {"arguments": '"src/radix.py", '}}]}}]},
+            {"choices": [{"delta": {"tool_calls": [{"index": 0, "function": {"arguments": '"limit": 50}'}}]}}]},
+        ]
+        for c in chunks:
+            asm.feed_line(f"data: {json.dumps(c)}")
+        res = asm.finalize()
+        assert len(res["tool_calls"]) == 1
+        tc = res["tool_calls"][0]
+        assert tc["id"] == "call_abc"
+        assert tc["function"]["name"] == "read_file"
+>       assert json.loads(tc["function"]["arguments"]) == {"path": "src/radix.py", "limit": 50}
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_codec.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Python313\Lib\json\__init__.py:346: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <json.decoder.JSONDecoder object at 0x00000206640CB380>
+s = '"limit": 50}'
+_w = <built-in method match of re.Pattern object at 0x00000206641F4040>
+
+    def decode(self, s, _w=WHITESPACE.match):
+        """Return the Python representation of ``s`` (a ``str`` instance
+        containing a JSON document).
+    
+        """
+        obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+        end = _w(s, end).end()
+        if end != len(s):
+>           raise JSONDecodeError("Extra data", s, end)
+E           json.decoder.JSONDecodeError: Extra data: line 1 column 8 (char 7)
+
+C:\Python313\Lib\json\decoder.py:348: JSONDecodeError
+=========================== short test summary info ===========================
+FAILED tests/test_codec.py::test_codec_concatenates_single_tool_call_arguments_across_chunks
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!
+1 failed, 3 passed in 0.06s

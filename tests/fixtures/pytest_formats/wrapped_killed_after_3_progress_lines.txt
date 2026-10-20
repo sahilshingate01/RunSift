@@ -1,0 +1,11 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.6, pytest-8.4.2, pluggy-1.6.0
+rootdir: <workspace>
+plugins: anyio-4.14.2, asyncio-1.2.0, xdist-3.8.0
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 45 items
+
+tests\test_codec.py ...FF....                                            [ 20%]
+tests\test_limiter.py ...FF....                                          [ 40%]
+tests\test_radix.py .......FF                                            [ 60%]
+Command timed out after 120 seconds

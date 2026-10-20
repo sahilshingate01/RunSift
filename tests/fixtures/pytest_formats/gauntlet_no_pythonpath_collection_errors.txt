@@ -1,0 +1,66 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.6, pytest-8.4.2, pluggy-1.6.0
+rootdir: <workspace>
+plugins: anyio-4.14.2, asyncio-1.2.0, xdist-3.8.0
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 0 items / 5 errors
+
+=================================== ERRORS ====================================
+____________________ ERROR collecting tests/test_codec.py _____________________
+ImportError while importing test module '<workspace>\tests\test_codec.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Python313\Lib\importlib\__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_codec.py:6: in <module>
+    from tensorroute.codec import SSEChunkAssembler
+E   ModuleNotFoundError: No module named 'tensorroute'
+___________________ ERROR collecting tests/test_limiter.py ____________________
+ImportError while importing test module '<workspace>\tests\test_limiter.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Python313\Lib\importlib\__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_limiter.py:6: in <module>
+    from tensorroute.limiter import TokenBucketLimiter
+E   ModuleNotFoundError: No module named 'tensorroute'
+____________________ ERROR collecting tests/test_radix.py _____________________
+ImportError while importing test module '<workspace>\tests\test_radix.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Python313\Lib\importlib\__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_radix.py:6: in <module>
+    from tensorroute.radix import PrefixRadixTree
+E   ModuleNotFoundError: No module named 'tensorroute'
+__________________ ERROR collecting tests/test_scheduler.py ___________________
+ImportError while importing test module '<workspace>\tests\test_scheduler.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Python313\Lib\importlib\__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_scheduler.py:6: in <module>
+    from tensorroute.scheduler import BatchRequest, ContinuousBatchScheduler
+E   ModuleNotFoundError: No module named 'tensorroute'
+__________________ ERROR collecting tests/test_telemetry.py ___________________
+ImportError while importing test module '<workspace>\tests\test_telemetry.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Python313\Lib\importlib\__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_telemetry.py:6: in <module>
+    from tensorroute.telemetry import LatencyWindow
+E   ModuleNotFoundError: No module named 'tensorroute'
+=========================== short test summary info ===========================
+ERROR tests/test_codec.py
+ERROR tests/test_limiter.py
+ERROR tests/test_radix.py
+ERROR tests/test_scheduler.py
+ERROR tests/test_telemetry.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 5 errors during collection !!!!!!!!!!!!!!!!!!!
+============================== 5 errors in 0.15s ==============================
