@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-10-17T04:35:44Z",
+  "port": 8082,
+  "prompt_tokens": 90213,
+  "vram_load": 10941,
+  "peak_vram": 10991,
+  "ttft_ms": 73209.469,
+  "prefill_tok_s": 1232.258630369249,
+  "gen_tokens": 32,
+  "gen_tok_s": 37.26879820147994,
+  "model_reply": "The secret project operational code mentioned in the archive record is **ORION-9428-BETA**. This code is referenced as the operational identifier for the",
+  "needle_found": true
+}

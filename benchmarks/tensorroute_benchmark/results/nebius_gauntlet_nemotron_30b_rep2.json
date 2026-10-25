@@ -1,0 +1,463 @@
+{
+  "is_valid": true,
+  "invalidation_reason": null,
+  "provenance": {
+    "git_commit": "f242b9fd4c5bed7f77bb509321a976b02f25d614",
+    "git_dirty": false,
+    "cli_args": [
+      "benchmarks/tensorroute_benchmark/harness.py",
+      "--mode",
+      "gauntlet",
+      "--nebius",
+      "--model",
+      "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
+      "--upstream-kind",
+      "nebius",
+      "--repeats",
+      "3",
+      "--gateway-url",
+      "http://127.0.0.1:8765/v1"
+    ],
+    "timestamp": "2026-10-15T16:40:47Z",
+    "base_url": "https://api.tokenfactory.nebius.com/v1",
+    "server_launch_command": "not exposed by provider",
+    "engine_version": "not exposed by provider",
+    "nvidia_smi": "not exposed by provider",
+    "models_endpoint_response": {
+      "object": "list",
+      "data": [
+        {
+          "id": "moonshotai/Kimi-K3",
+          "created": 1785110400,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "Qwen/Qwen3-235B-A22B-Instruct-2507",
+          "created": 1792082429,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "google/gemma-3-27b-it",
+          "created": 1792082429,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "Qwen/Qwen3-Embedding-8B",
+          "created": 1792082429,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "openai/gpt-oss-120b",
+          "created": 1792082429,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "created": 1792082429,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "NousResearch/Hermes-4-405B",
+          "created": 1792082429,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
+          "created": 1792082431,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "zai-org/GLM-5.1",
+          "created": 1792082431,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "nvidia/Nemotron-3_5-Lightning",
+          "created": 1787845486,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "openbmb/MiniCPM-V-4_5",
+          "created": 1780272000,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "Qwen/Qwen3.8-27B",
+          "created": 1788458731,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "deepseek-ai/DeepSeek-V4-Flash-0731",
+          "created": 1786581299,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "MiniMaxAI/MiniMax-M3",
+          "created": 1785493267,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "moonshotai/Kimi-K2.7-Code",
+          "created": 1781740800,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "nvidia/Nemotron-3-Ultra-550b-a55b",
+          "created": 1780531200,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "moonshotai/Kimi-K2.6",
+          "created": 1778544000,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "nvidia/nemotron-3-super-120b-a12b",
+          "created": 1773187200,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "deepseek-ai/DeepSeek-V4-Pro",
+          "created": 1792082435,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "deepseek-ai/DeepSeek-V4-Pro-0813",
+          "created": 1791525427,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "zai-org/GLM-5.2",
+          "created": 1781481600,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "nvidia/Nemotron-3.5-Super-VL",
+          "created": 1791841710,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "zai-org/GLM-5.3-Flash",
+          "created": 1789524983,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "deepseek-ai/DeepSeek-V4.1-Flash",
+          "created": 1789509523,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "zai-org/GLM-5.3",
+          "created": 1789085803,
+          "object": "model",
+          "owned_by": "system"
+        }
+      ]
+    }
+  },
+  "timestamp": "2026-10-15T16:40:47Z",
+  "benchmark_suite": "TensorRoute-Bench v2 (Continuous 5-Bug Multi-Module Gauntlet - Wave 1 (both))",
+  "model": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
+  "upstream_base_url": "https://api.tokenfactory.nebius.com/v1",
+  "tasks_evaluated": 1,
+  "turns": 20,
+  "baseline": {
+    "tasks_solved": "0/1",
+    "solve_rate_pct": 0.0,
+    "nudge_count": 0,
+    "nudge_rate_pct": 0.0,
+    "cache_hit_rate_pct": 90.0,
+    "prefix_match_rate_pct": 95.0,
+    "upstream_cached_tokens": 806784,
+    "uncached_prefill_tokens": 131202,
+    "avg_ttft_ms": 885.76,
+    "p50_ttft_ms": 806.54,
+    "p95_ttft_ms": 1273.99,
+    "total_prompt_tokens": 937986,
+    "peak_turn_prompt_tokens": 97584,
+    "total_turns": 20,
+    "per_turn_ttft_ms": [
+      771.59,
+      827.38,
+      537.57,
+      634.15,
+      783.7,
+      637.93,
+      764.78,
+      976.23,
+      806.54,
+      1019.92,
+      614.93,
+      1089.93,
+      713.77,
+      1178.15,
+      781.15,
+      1273.99,
+      1003.4,
+      1284.18,
+      959.8,
+      1056.08
+    ],
+    "per_turn_prompt_tokens": [
+      1163,
+      13885,
+      14719,
+      15521,
+      16197,
+      17459,
+      18576,
+      31303,
+      31417,
+      44141,
+      44360,
+      57087,
+      57282,
+      69427,
+      69589,
+      80130,
+      80283,
+      88822,
+      89041,
+      97584
+    ],
+    "task_results": [
+      {
+        "task_id": "GAUNTLET-WAVE-1",
+        "arm": "baseline",
+        "model": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
+        "solved": false,
+        "modules_fixed": "3/5",
+        "passed_tests": 40,
+        "failed_tests": 5,
+        "turns": 20,
+        "total_prompt_tokens": 937986,
+        "peak_turn_prompt_tokens": 97584,
+        "total_completion_tokens": 1190,
+        "upstream_cached_tokens": 806784,
+        "avg_ttft_ms": 885.76,
+        "p50_ttft_ms": 806.54,
+        "p95_ttft_ms": 1273.99,
+        "per_turn_ttft_ms": [
+          771.59,
+          827.38,
+          537.57,
+          634.15,
+          783.7,
+          637.93,
+          764.78,
+          976.23,
+          806.54,
+          1019.92,
+          614.93,
+          1089.93,
+          713.77,
+          1178.15,
+          781.15,
+          1273.99,
+          1003.4,
+          1284.18,
+          959.8,
+          1056.08
+        ],
+        "per_turn_prompt_tokens": [
+          1163,
+          13885,
+          14719,
+          15521,
+          16197,
+          17459,
+          18576,
+          31303,
+          31417,
+          44141,
+          44360,
+          57087,
+          57282,
+          69427,
+          69589,
+          80130,
+          80283,
+          88822,
+          89041,
+          97584
+        ],
+        "cache_hits": 18,
+        "cache_hit_rate_pct": 90.0,
+        "prefix_matches": 19,
+        "prefix_match_rate_pct": 95.0,
+        "context_overflow": false,
+        "patch_diff": "diff --git a/src/tensorroute/codec.py b/src/tensorroute/codec.py\nindex 0ac1886..afc58e5 100644\n--- a/src/tensorroute/codec.py\n+++ b/src/tensorroute/codec.py\n@@ -70,7 +70,7 @@ class SSEChunkAssembler:\n             if fn.get(\"name\"):\n                 entry[\"function\"][\"name\"] += str(fn[\"name\"])\n             if fn.get(\"arguments\"):\n-                entry[\"function\"][\"arguments\"] = str(fn[\"arguments\"])\n+                entry[\"function\"][\"arguments\"] = str(fn.get(\"arguments\", \"\"))\n \n         return False\n \ndiff --git a/src/tensorroute/limiter.py b/src/tensorroute/limiter.py\nindex 8abddde..9dc8f62 100644\n--- a/src/tensorroute/limiter.py\n+++ b/src/tensorroute/limiter.py\n@@ -30,8 +30,8 @@ class TokenBucketLimiter:\n         \"\"\"Refills bucket based on exact fractional elapsed time since last_refill_ts.\"\"\"\n         if now < self.last_refill_ts:\n             raise ValueError(\"Monotonic clock violation: now < last_refill_ts\")\n-        elapsed = float(int(now - self.last_refill_ts))\n-        if now > self.last_refill_ts:\n+        elapsed = now - self.last_refill_ts\n+        if elapsed > 0:\n             added = elapsed * self.refill_rate_per_sec\n             self.tokens = min(self.capacity, self.tokens + added)\n             self.last_refill_ts = now\ndiff --git a/src/tensorroute/radix.py b/src/tensorroute/radix.py\nindex 8a6c4e9..06f7cf6 100644\n--- a/src/tensorroute/radix.py\n+++ b/src/tensorroute/radix.py\n@@ -128,7 +128,7 @@ class PrefixRadixTree:\n                     evicted_count += 1\n                     anc = parent\n                     while anc is not None and anc is not self.root:\n-                        anc.ref_count = max(0, anc.ref_count - (2 * leaf.ref_count))\n+                        anc.ref_count = max(0, anc.ref_count - leaf.ref_count)\n                         anc = anc.parent\n \n         return evicted_count\ndiff --git a/src/tensorroute/scheduler.py b/src/tensorroute/scheduler.py\nindex f323d3c..a1a8d31 100644\n--- a/src/tensorroute/scheduler.py\n+++ b/src/tensorroute/scheduler.py\n@@ -86,4 +86,8 @@ class ContinuousBatchScheduler:\n                 self._queue.sort(key=lambda r: (-r.priority, self._arrival_order.get(r.request_id, 0)))\n                 break\n             batches.append(batch)\n+            if not batch:\n+                break\n+            if not batch:\n+                break\n         return batches\ndiff --git a/src/tensorroute/telemetry.py b/src/tensorroute/telemetry.py\nindex 160d1f9..f98cba6 100644\n--- a/src/tensorroute/telemetry.py\n+++ b/src/tensorroute/telemetry.py\n@@ -66,8 +66,8 @@ class LatencyWindow:\n             return 0.0\n         if q == 0.0:\n             return filtered[0]\n-        idx = math.ceil((q / 100.0) * n)\n-        return round(filtered[idx], 3)\n+        idx = max(0, math.ceil((q / 100.0) * n) - 1)\n+        return round(filtered[idx], 3) if idx < n else round(filtered[-1], 3)\n \n     def summary(self, min_ttft_ms: float = 0.0) -> dict[str, float | int]:\n         \"\"\"Returns aggregate window statistics for samples with ttft_ms >= min_ttft_ms.\"\"\"\n",
+        "nudge_count": 0,
+        "nudge_rate_pct": 0.0
+      }
+    ]
+  },
+  "cacheforge": {
+    "tasks_solved": "0/1",
+    "solve_rate_pct": 0.0,
+    "nudge_count": 0,
+    "nudge_rate_pct": 0.0,
+    "cache_hit_rate_pct": 85.0,
+    "prefix_match_rate_pct": 95.0,
+    "upstream_cached_tokens": 147840,
+    "uncached_prefill_tokens": 60864,
+    "avg_ttft_ms": 562.43,
+    "p50_ttft_ms": 539.55,
+    "p95_ttft_ms": 711.61,
+    "total_prompt_tokens": 208704,
+    "peak_turn_prompt_tokens": 17459,
+    "total_turns": 20,
+    "per_turn_ttft_ms": [
+      453.06,
+      506.1,
+      485.91,
+      554.72,
+      485.83,
+      466.88,
+      514.73,
+      522.76,
+      519.18,
+      627.41,
+      477.85,
+      586.94,
+      577.04,
+      560.47,
+      751.63,
+      644.71,
+      605.83,
+      539.55,
+      656.34,
+      711.61
+    ],
+    "per_turn_prompt_tokens": [
+      1166,
+      3260,
+      4521,
+      5323,
+      5999,
+      6833,
+      7950,
+      8114,
+      9657,
+      10243,
+      11841,
+      12093,
+      13381,
+      13932,
+      14014,
+      14847,
+      15074,
+      16363,
+      16634,
+      17459
+    ],
+    "task_results": [
+      {
+        "task_id": "GAUNTLET-WAVE-1",
+        "arm": "cacheforge",
+        "model": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
+        "solved": false,
+        "modules_fixed": "3/5",
+        "passed_tests": 40,
+        "failed_tests": 5,
+        "turns": 20,
+        "total_prompt_tokens": 208704,
+        "peak_turn_prompt_tokens": 17459,
+        "total_completion_tokens": 2382,
+        "upstream_cached_tokens": 147840,
+        "avg_ttft_ms": 562.43,
+        "p50_ttft_ms": 539.55,
+        "p95_ttft_ms": 711.61,
+        "per_turn_ttft_ms": [
+          453.06,
+          506.1,
+          485.91,
+          554.72,
+          485.83,
+          466.88,
+          514.73,
+          522.76,
+          519.18,
+          627.41,
+          477.85,
+          586.94,
+          577.04,
+          560.47,
+          751.63,
+          644.71,
+          605.83,
+          539.55,
+          656.34,
+          711.61
+        ],
+        "per_turn_prompt_tokens": [
+          1166,
+          3260,
+          4521,
+          5323,
+          5999,
+          6833,
+          7950,
+          8114,
+          9657,
+          10243,
+          11841,
+          12093,
+          13381,
+          13932,
+          14014,
+          14847,
+          15074,
+          16363,
+          16634,
+          17459
+        ],
+        "cache_hits": 17,
+        "cache_hit_rate_pct": 85.0,
+        "prefix_matches": 19,
+        "prefix_match_rate_pct": 95.0,
+        "context_overflow": false,
+        "patch_diff": "diff --git a/src/tensorroute/codec.py b/src/tensorroute/codec.py\nindex 0ac1886..b37081b 100644\n--- a/src/tensorroute/codec.py\n+++ b/src/tensorroute/codec.py\n@@ -68,7 +68,7 @@ class SSEChunkAssembler:\n \n             fn = tc.get(\"function\") or {}\n             if fn.get(\"name\"):\n-                entry[\"function\"][\"name\"] += str(fn[\"name\"])\n+                entry[\"function\"][\"name\"] = str(fn[\"name\"])\n             if fn.get(\"arguments\"):\n                 entry[\"function\"][\"arguments\"] = str(fn[\"arguments\"])\n \ndiff --git a/src/tensorroute/limiter.py b/src/tensorroute/limiter.py\nindex 8abddde..a476278 100644\n--- a/src/tensorroute/limiter.py\n+++ b/src/tensorroute/limiter.py\n@@ -30,11 +30,10 @@ class TokenBucketLimiter:\n         \"\"\"Refills bucket based on exact fractional elapsed time since last_refill_ts.\"\"\"\n         if now < self.last_refill_ts:\n             raise ValueError(\"Monotonic clock violation: now < last_refill_ts\")\n-        elapsed = float(int(now - self.last_refill_ts))\n-        if now > self.last_refill_ts:\n-            added = elapsed * self.refill_rate_per_sec\n-            self.tokens = min(self.capacity, self.tokens + added)\n-            self.last_refill_ts = now\n+        elapsed = now - self.last_refill_ts\n+        added = elapsed * self.refill_rate_per_sec\n+        self.tokens = min(self.capacity, self.tokens + added)\n+        self.last_refill_ts = now\n \n     def available_tokens(self, now: float) -> float:\n         self._refill(now)\ndiff --git a/src/tensorroute/radix.py b/src/tensorroute/radix.py\nindex 8a6c4e9..06f7cf6 100644\n--- a/src/tensorroute/radix.py\n+++ b/src/tensorroute/radix.py\n@@ -128,7 +128,7 @@ class PrefixRadixTree:\n                     evicted_count += 1\n                     anc = parent\n                     while anc is not None and anc is not self.root:\n-                        anc.ref_count = max(0, anc.ref_count - (2 * leaf.ref_count))\n+                        anc.ref_count = max(0, anc.ref_count - leaf.ref_count)\n                         anc = anc.parent\n \n         return evicted_count\ndiff --git a/src/tensorroute/scheduler.py b/src/tensorroute/scheduler.py\nindex f323d3c..8e7560e 100644\n--- a/src/tensorroute/scheduler.py\n+++ b/src/tensorroute/scheduler.py\n@@ -84,6 +84,7 @@ class ContinuousBatchScheduler:\n                 for req in batch:\n                     self._queue.append(req)\n                 self._queue.sort(key=lambda r: (-r.priority, self._arrival_order.get(r.request_id, 0)))\n+                batches.append(batch)\n                 break\n             batches.append(batch)\n         return batches\ndiff --git a/src/tensorroute/telemetry.py b/src/tensorroute/telemetry.py\nindex 160d1f9..9b407ee 100644\n--- a/src/tensorroute/telemetry.py\n+++ b/src/tensorroute/telemetry.py\n@@ -66,7 +66,7 @@ class LatencyWindow:\n             return 0.0\n         if q == 0.0:\n             return filtered[0]\n-        idx = math.ceil((q / 100.0) * n)\n+        idx = math.ceil((q / 100.0) * n) - 1\n         return round(filtered[idx], 3)\n \n     def summary(self, min_ttft_ms: float = 0.0) -> dict[str, float | int]:\n",
+        "nudge_count": 0,
+        "nudge_rate_pct": 0.0
+      }
+    ]
+  },
+  "improvements": {
+    "solve_rate_delta_pct": 0.0,
+    "nudge_rate_delta_pct": 0.0,
+    "cache_hit_rate_delta_pct": -5.0,
+    "prefix_match_rate_delta_pct": 0.0,
+    "ttft_reduction_pct": 36.5,
+    "token_savings_pct": 77.75,
+    "uncached_prefill_savings_pct": 53.61,
+    "peak_token_reduction_pct": 82.11,
+    "tokens_saved_total": 729282
+  },
+  "ablation": "both",
+  "rep": 2
+}

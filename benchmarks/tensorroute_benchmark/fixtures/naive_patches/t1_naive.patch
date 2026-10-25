@@ -1,0 +1,10 @@
+--- a/src/tensorroute/units.py
++++ b/src/tensorroute/units.py
+@@ -15,7 +15,7 @@
+ def safe_ratio(part: float, whole: float) -> float:
+-    """Computes part / whole as a dimensionless fraction in [0.0, 1.0].
++    """Computes part / whole as a percentage in [0.0, 100.0]."""
+     if whole <= 0.0 or part <= 0.0:
+         return 0.0
+-    return min(1.0, float(part) / float(whole))
++    return min(100.0, (float(part) / float(whole)) * 100.0)

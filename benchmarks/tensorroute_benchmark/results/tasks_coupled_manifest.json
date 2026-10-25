@@ -1,0 +1,198 @@
+{
+  "task_set": "coupled",
+  "test_count": 56,
+  "trap_count": 5,
+  "source_file_hashes": {
+    "src/tensorroute/__init__.py": "a7b1e690d8231d2b4f9d5762379829fef234f53430bf5b10f85d6da8b24fa2ee",
+    "src/tensorroute/codec.py": "f82066e6b909854ec7e161b185b0a1ef5c47a542cc199fd609a78530d3d7e94a",
+    "src/tensorroute/limiter.py": "c3cd3ac713d3a8c0bc655fd4dcebe29bf9f9ba089f701d80a29f089ea7e86b1f",
+    "src/tensorroute/pipeline.py": "4691457507519b21ff4aac0121b839c22335b1a37a95db5a3a5226bb28fb88e7",
+    "src/tensorroute/radix.py": "ef880f5bf2dbc40dee27faadc9d79a80aed122c317f04a6c41684e39fe95cd5a",
+    "src/tensorroute/scheduler.py": "a1ab3e22131df84754f39b48f5eb6e86841548e72fa5dfebb344f659e9bc6038",
+    "src/tensorroute/telemetry.py": "58905f46ee5c74981901722d7e02eea099bcfcfea3ae8b194a6e2d3d52b8a8d3",
+    "src/tensorroute/units.py": "bc371993b189a58ff6f1409a5186274314e1874e122f191a8014d16f864e4abf",
+    "tests/test_codec.py": "65c0adc3a7085dd647bf3f93df1bfd1622e05a422439a0ffe80d0bc0363465e8",
+    "tests/test_limiter.py": "a40381b11b7d13f72842163ba3e45be11933a47599b728c504a7e5efaa9c5ef4",
+    "tests/test_pipeline.py": "7e7bf0d928029373ff5846f62507338b6dc6f68cd148977fd511421d4301228b",
+    "tests/test_radix.py": "ea8460d2d7e9a41f737c75a6a4eae1344bd2fd74f278245216e9b60197c121ec",
+    "tests/test_scheduler.py": "c6ca0f5fe0ebb02086b101b789e6b8738d8b07fce8784a3f5d0c8fc498082f8e",
+    "tests/test_telemetry.py": "858ad0e3cc45279dbfaf3940357c473b95ff5e04dea2f0864c8a01f13ad71e93",
+    "tests/test_units.py": "23d1b9fe796dabff9356c174c188cd9f99d41fd8c4151230c505b43cc892113a"
+  },
+  "all_tests": [
+    "tests/test_codec.py::test_codec_assembles_content_and_reasoning_deltas",
+    "tests/test_codec.py::test_codec_concatenates_single_tool_call_arguments_across_chunks",
+    "tests/test_codec.py::test_codec_extracts_nested_cached_tokens_usage",
+    "tests/test_codec.py::test_codec_extracts_top_level_prompt_cache_hit_tokens",
+    "tests/test_codec.py::test_codec_handles_done_sentinel",
+    "tests/test_codec.py::test_codec_handles_interleaved_multi_tool_calls",
+    "tests/test_codec.py::test_codec_ignores_comments_and_blank_lines",
+    "tests/test_codec.py::test_codec_preserves_usage_when_later_chunk_has_no_usage",
+    "tests/test_limiter.py::test_limiter_caps_at_capacity",
+    "tests/test_limiter.py::test_limiter_initial_full_capacity_acquire",
+    "tests/test_limiter.py::test_limiter_insufficient_tokens_returns_exact_wait_time",
+    "tests/test_limiter.py::test_limiter_invalid_configuration",
+    "tests/test_limiter.py::test_limiter_monotonic_clock_guard",
+    "tests/test_limiter.py::test_limiter_negative_request_raises",
+    "tests/test_limiter.py::test_limiter_request_exceeding_capacity_returns_inf_wait",
+    "tests/test_limiter.py::test_limiter_starts_empty_by_default",
+    "tests/test_limiter.py::test_utilization_is_fraction",
+    "tests/test_pipeline.py::test_pipeline_admits_all_requests_including_tail",
+    "tests/test_pipeline.py::test_pipeline_cold_route_returns_none",
+    "tests/test_pipeline.py::test_pipeline_does_not_route_below_threshold",
+    "tests/test_pipeline.py::test_pipeline_empty_admission",
+    "tests/test_pipeline.py::test_pipeline_immediate_startup_admission",
+    "tests/test_pipeline.py::test_pipeline_records_latency_in_ms",
+    "tests/test_pipeline.py::test_pipeline_routes_to_warm_worker",
+    "tests/test_radix.py::test_radix_evict_deep_chain_updates_all_ancestors_once",
+    "tests/test_radix.py::test_radix_evict_expired_leaf_preserves_shared_parent_ref_count",
+    "tests/test_radix.py::test_radix_insert_and_exact_match",
+    "tests/test_radix.py::test_radix_invalid_chunk_size",
+    "tests/test_radix.py::test_radix_match_counts_tokens",
+    "tests/test_radix.py::test_radix_partial_chunk_truncation",
+    "tests/test_radix.py::test_radix_release_floors_at_zero",
+    "tests/test_radix.py::test_radix_release_prefix_decrements_ref_count",
+    "tests/test_radix.py::test_radix_short_sequence_below_chunk_size",
+    "tests/test_radix.py::test_radix_ttl_expiration_blocks_match",
+    "tests/test_scheduler.py::test_scheduler_batch_token_budget_packing",
+    "tests/test_scheduler.py::test_scheduler_drain_all_exact_multiple",
+    "tests/test_scheduler.py::test_scheduler_drain_all_retains_partial_remainder_when_false",
+    "tests/test_scheduler.py::test_scheduler_fifo_order_for_equal_priority",
+    "tests/test_scheduler.py::test_scheduler_flushes_partial_tail",
+    "tests/test_scheduler.py::test_scheduler_invalid_limits",
+    "tests/test_scheduler.py::test_scheduler_priority_preemption_over_fifo",
+    "tests/test_scheduler.py::test_scheduler_request_exceeding_max_batch_tokens_raises",
+    "tests/test_telemetry.py::test_telemetry_empty_window_summary_and_percentile",
+    "tests/test_telemetry.py::test_telemetry_filtered_empty_window_returns_zero_without_division_error",
+    "tests/test_telemetry.py::test_telemetry_hit_rate_is_percentage",
+    "tests/test_telemetry.py::test_telemetry_invalid_max_samples",
+    "tests/test_telemetry.py::test_telemetry_invalid_percentile_range",
+    "tests/test_telemetry.py::test_telemetry_rejects_negative_metrics",
+    "tests/test_telemetry.py::test_telemetry_ring_buffer_evicts_oldest",
+    "tests/test_telemetry.py::test_telemetry_single_sample_percentiles_do_not_overflow",
+    "tests/test_telemetry.py::test_telemetry_ten_sample_nearest_rank_percentiles",
+    "tests/test_telemetry.py::test_telemetry_token_reuse_is_percentage",
+    "tests/test_units.py::test_safe_ratio_bounds",
+    "tests/test_units.py::test_safe_ratio_valid_fractions",
+    "tests/test_units.py::test_safe_ratio_zero_denominator",
+    "tests/test_units.py::test_to_ms_conversion"
+  ],
+  "initial_passing_tests": [
+    "tests/test_codec.py::test_codec_assembles_content_and_reasoning_deltas",
+    "tests/test_codec.py::test_codec_concatenates_single_tool_call_arguments_across_chunks",
+    "tests/test_codec.py::test_codec_extracts_nested_cached_tokens_usage",
+    "tests/test_codec.py::test_codec_extracts_top_level_prompt_cache_hit_tokens",
+    "tests/test_codec.py::test_codec_handles_done_sentinel",
+    "tests/test_codec.py::test_codec_handles_interleaved_multi_tool_calls",
+    "tests/test_codec.py::test_codec_ignores_comments_and_blank_lines",
+    "tests/test_codec.py::test_codec_preserves_usage_when_later_chunk_has_no_usage",
+    "tests/test_limiter.py::test_limiter_caps_at_capacity",
+    "tests/test_limiter.py::test_limiter_initial_full_capacity_acquire",
+    "tests/test_limiter.py::test_limiter_insufficient_tokens_returns_exact_wait_time",
+    "tests/test_limiter.py::test_limiter_invalid_configuration",
+    "tests/test_limiter.py::test_limiter_monotonic_clock_guard",
+    "tests/test_limiter.py::test_limiter_negative_request_raises",
+    "tests/test_limiter.py::test_limiter_request_exceeding_capacity_returns_inf_wait",
+    "tests/test_limiter.py::test_utilization_is_fraction",
+    "tests/test_pipeline.py::test_pipeline_cold_route_returns_none",
+    "tests/test_pipeline.py::test_pipeline_does_not_route_below_threshold",
+    "tests/test_pipeline.py::test_pipeline_empty_admission",
+    "tests/test_pipeline.py::test_pipeline_immediate_startup_admission",
+    "tests/test_radix.py::test_radix_evict_deep_chain_updates_all_ancestors_once",
+    "tests/test_radix.py::test_radix_evict_expired_leaf_preserves_shared_parent_ref_count",
+    "tests/test_radix.py::test_radix_insert_and_exact_match",
+    "tests/test_radix.py::test_radix_invalid_chunk_size",
+    "tests/test_radix.py::test_radix_partial_chunk_truncation",
+    "tests/test_radix.py::test_radix_release_floors_at_zero",
+    "tests/test_radix.py::test_radix_release_prefix_decrements_ref_count",
+    "tests/test_radix.py::test_radix_short_sequence_below_chunk_size",
+    "tests/test_radix.py::test_radix_ttl_expiration_blocks_match",
+    "tests/test_scheduler.py::test_scheduler_batch_token_budget_packing",
+    "tests/test_scheduler.py::test_scheduler_drain_all_exact_multiple",
+    "tests/test_scheduler.py::test_scheduler_drain_all_retains_partial_remainder_when_false",
+    "tests/test_scheduler.py::test_scheduler_fifo_order_for_equal_priority",
+    "tests/test_scheduler.py::test_scheduler_invalid_limits",
+    "tests/test_scheduler.py::test_scheduler_priority_preemption_over_fifo",
+    "tests/test_scheduler.py::test_scheduler_request_exceeding_max_batch_tokens_raises",
+    "tests/test_telemetry.py::test_telemetry_empty_window_summary_and_percentile",
+    "tests/test_telemetry.py::test_telemetry_filtered_empty_window_returns_zero_without_division_error",
+    "tests/test_telemetry.py::test_telemetry_invalid_max_samples",
+    "tests/test_telemetry.py::test_telemetry_invalid_percentile_range",
+    "tests/test_telemetry.py::test_telemetry_rejects_negative_metrics",
+    "tests/test_telemetry.py::test_telemetry_ring_buffer_evicts_oldest",
+    "tests/test_telemetry.py::test_telemetry_single_sample_percentiles_do_not_overflow",
+    "tests/test_telemetry.py::test_telemetry_ten_sample_nearest_rank_percentiles",
+    "tests/test_units.py::test_safe_ratio_bounds",
+    "tests/test_units.py::test_safe_ratio_valid_fractions",
+    "tests/test_units.py::test_safe_ratio_zero_denominator",
+    "tests/test_units.py::test_to_ms_conversion"
+  ],
+  "f2p_union": [
+    "tests/test_limiter.py::test_limiter_starts_empty_by_default",
+    "tests/test_pipeline.py::test_pipeline_admits_all_requests_including_tail",
+    "tests/test_pipeline.py::test_pipeline_records_latency_in_ms",
+    "tests/test_pipeline.py::test_pipeline_routes_to_warm_worker",
+    "tests/test_radix.py::test_radix_match_counts_tokens",
+    "tests/test_scheduler.py::test_scheduler_flushes_partial_tail",
+    "tests/test_telemetry.py::test_telemetry_hit_rate_is_percentage",
+    "tests/test_telemetry.py::test_telemetry_token_reuse_is_percentage"
+  ],
+  "traps": {
+    "T1-shared-helper": {
+      "title": "Telemetry percentage summary vs dimensionless ratio contract",
+      "symptom": "The dashboard shows a cache hit rate of 0.5 when half the requests hit; it should read 50.",
+      "f2p_tests": [
+        "tests/test_telemetry.py::test_telemetry_hit_rate_is_percentage",
+        "tests/test_telemetry.py::test_telemetry_token_reuse_is_percentage"
+      ],
+      "guard_tests": [
+        "tests/test_limiter.py::test_utilization_is_fraction",
+        "tests/test_units.py::test_safe_ratio_valid_fractions"
+      ]
+    },
+    "T2-units-boundary": {
+      "title": "Latency window millisecond unit conversion at pipeline completion boundary",
+      "symptom": "Recorded p95 time-to-first-token is about 0.2 ms; real requests take about 200 ms.",
+      "f2p_tests": [
+        "tests/test_pipeline.py::test_pipeline_records_latency_in_ms"
+      ],
+      "guard_tests": [
+        "tests/test_telemetry.py::test_telemetry_single_sample_percentiles_do_not_overflow",
+        "tests/test_telemetry.py::test_telemetry_ten_sample_nearest_rank_percentiles"
+      ]
+    },
+    "T3-masked-bug": {
+      "title": "Partial batch tail emission and sub-second rate limiter refill",
+      "symptom": "In each admission wave, the last few queued requests are never admitted.",
+      "f2p_tests": [
+        "tests/test_pipeline.py::test_pipeline_admits_all_requests_including_tail",
+        "tests/test_scheduler.py::test_scheduler_flushes_partial_tail"
+      ],
+      "guard_tests": [
+        "tests/test_scheduler.py::test_scheduler_drain_all_exact_multiple",
+        "tests/test_scheduler.py::test_scheduler_drain_all_retains_partial_remainder_when_false"
+      ]
+    },
+    "T4-changed-default": {
+      "title": "Empty initial rate limiter default with pipeline factory configuration",
+      "symptom": "A newly created rate limiter starts full, allowing a burst at startup. It should start empty unless told otherwise.",
+      "f2p_tests": [
+        "tests/test_limiter.py::test_limiter_starts_empty_by_default"
+      ],
+      "guard_tests": [
+        "tests/test_pipeline.py::test_pipeline_immediate_startup_admission"
+      ]
+    },
+    "T5-workaround-root-cause": {
+      "title": "Radix prefix token match counting vs chunk multiplier workaround",
+      "symptom": "Prefix-aware routing sends requests to cold workers even when a warm prefix exists.",
+      "f2p_tests": [
+        "tests/test_pipeline.py::test_pipeline_routes_to_warm_worker",
+        "tests/test_radix.py::test_radix_match_counts_tokens"
+      ],
+      "guard_tests": [
+        "tests/test_pipeline.py::test_pipeline_does_not_route_below_threshold"
+      ]
+    }
+  }
+}

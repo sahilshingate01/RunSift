@@ -1,0 +1,281 @@
+{
+  "provenance": {
+    "git_commit": "d979b082d2cc6a403f09efa81894922649c7cad7",
+    "git_dirty": true,
+    "cli_args": [
+      "benchmarks/run_benchmark.py",
+      "--gateway-url",
+      "http://127.0.0.1:8765/v1",
+      "--model",
+      "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
+      "--output",
+      "benchmarks/latest_30b_benchmark.json"
+    ],
+    "timestamp": "2026-10-15T06:40:45Z",
+    "base_url": "https://api.tokenfactory.nebius.com/v1",
+    "server_launch_command": "not exposed by provider",
+    "engine_version": "not exposed by provider",
+    "nvidia_smi": "not exposed by provider",
+    "models_endpoint_response": {
+      "object": "list",
+      "data": [
+        {
+          "id": "moonshotai/Kimi-K3",
+          "created": 1785110400,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "Qwen/Qwen3-235B-A22B-Instruct-2507",
+          "created": 1792046432,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "google/gemma-3-27b-it",
+          "created": 1792046433,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "Qwen/Qwen3-Embedding-8B",
+          "created": 1792046433,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "openai/gpt-oss-120b",
+          "created": 1792046433,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "created": 1792046433,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "NousResearch/Hermes-4-405B",
+          "created": 1792046433,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
+          "created": 1792046433,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "zai-org/GLM-5.1",
+          "created": 1792046433,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "nvidia/Nemotron-3_5-Lightning",
+          "created": 1787845486,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "openbmb/MiniCPM-V-4_5",
+          "created": 1780272000,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "Qwen/Qwen3.8-27B",
+          "created": 1788458731,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "deepseek-ai/DeepSeek-V4-Flash-0731",
+          "created": 1786581299,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "MiniMaxAI/MiniMax-M3",
+          "created": 1785493267,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "moonshotai/Kimi-K2.7-Code",
+          "created": 1781740800,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "nvidia/Nemotron-3-Ultra-550b-a55b",
+          "created": 1780531200,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "moonshotai/Kimi-K2.6",
+          "created": 1778544000,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "nvidia/nemotron-3-super-120b-a12b",
+          "created": 1773187200,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "Qwen/Qwen3.5-397B-A17B",
+          "created": 1771286400,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "deepseek-ai/DeepSeek-V4-Pro",
+          "created": 1792046430,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "deepseek-ai/DeepSeek-V4-Pro-0813",
+          "created": 1791525427,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "zai-org/GLM-5.2",
+          "created": 1781481600,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "zai-org/GLM-5.3-Flash",
+          "created": 1789524983,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "deepseek-ai/DeepSeek-V4.1-Flash",
+          "created": 1789509523,
+          "object": "model",
+          "owned_by": "system"
+        },
+        {
+          "id": "zai-org/GLM-5.3",
+          "created": 1789085803,
+          "object": "model",
+          "owned_by": "system"
+        }
+      ]
+    }
+  },
+  "timestamp": "2026-10-15T06:40:45Z",
+  "turns": 10,
+  "mode": "gateway_proxy",
+  "gateway_url": "http://127.0.0.1:8765/v1",
+  "model": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
+  "upstream_base_url": "https://api.tokenfactory.nebius.com/v1",
+  "baseline": {
+    "cache_hit_rate_pct": 60.0,
+    "prefix_match_rate_pct": 90.0,
+    "upstream_cached_tokens": 42240,
+    "avg_ttft_ms": 431.47,
+    "total_prompt_tokens": 88306,
+    "per_turn_ttft_ms": [
+      580.43,
+      301.04,
+      373.99,
+      410.01,
+      354.01,
+      409.73,
+      432.59,
+      414.27,
+      404.32,
+      634.28
+    ],
+    "per_turn_prompt_tokens": [
+      987,
+      2730,
+      4473,
+      6216,
+      7959,
+      9702,
+      11445,
+      13188,
+      14931,
+      16675
+    ]
+  },
+  "runsift": {
+    "cache_hit_rate_pct": 40.0,
+    "prefix_match_rate_pct": 90.0,
+    "upstream_cached_tokens": 16896,
+    "avg_ttft_ms": 413.63,
+    "total_prompt_tokens": 43111,
+    "per_turn_ttft_ms": [
+      551.66,
+      307.63,
+      295.58,
+      386.46,
+      808.82,
+      365.59,
+      346.78,
+      355.55,
+      357.6,
+      360.6
+    ],
+    "per_turn_prompt_tokens": [
+      990,
+      1728,
+      2466,
+      3204,
+      3942,
+      4680,
+      5418,
+      6156,
+      6894,
+      7633
+    ]
+  },
+  "cacheforge": {
+    "cache_hit_rate_pct": 40.0,
+    "prefix_match_rate_pct": 90.0,
+    "upstream_cached_tokens": 16896,
+    "avg_ttft_ms": 413.63,
+    "total_prompt_tokens": 43111,
+    "per_turn_ttft_ms": [
+      551.66,
+      307.63,
+      295.58,
+      386.46,
+      808.82,
+      365.59,
+      346.78,
+      355.55,
+      357.6,
+      360.6
+    ],
+    "per_turn_prompt_tokens": [
+      990,
+      1728,
+      2466,
+      3204,
+      3942,
+      4680,
+      5418,
+      6156,
+      6894,
+      7633
+    ]
+  },
+  "improvements": {
+    "cache_hit_rate_delta_pct": -20.0,
+    "prefix_match_rate_delta_pct": 0.0,
+    "ttft_reduction_pct": 4.13,
+    "token_savings_pct": 51.18,
+    "tokens_saved_total": 45195
+  }
+}

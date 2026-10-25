@@ -1,0 +1,5 @@
+--- a/src/tensorroute/scheduler.py
++++ b/src/tensorroute/scheduler.py
+@@ -75,1 +75,1 @@
+-            if len(batch) < self.max_batch_size:
++            if not flush_partial and len(batch) < self.max_batch_size:

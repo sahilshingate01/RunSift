@@ -1,0 +1,10 @@
+--- a/src/tensorroute/limiter.py
++++ b/src/tensorroute/limiter.py
+@@ -17,3 +17,3 @@
+-        initial_tokens: float | None = None,
++        initial_tokens: float | None = 0.0,
+         start_ts: float = 0.0,
+     ) -> None:
+@@ -23,1 +23,1 @@
+-        self.tokens = self.capacity if initial_tokens is None else min(self.capacity, float(initial_tokens))
++        self.tokens = 0.0 if initial_tokens is None else min(self.capacity, float(initial_tokens))

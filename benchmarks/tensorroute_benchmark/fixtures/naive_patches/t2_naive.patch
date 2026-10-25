@@ -1,0 +1,5 @@
+--- a/src/tensorroute/telemetry.py
++++ b/src/tensorroute/telemetry.py
+@@ -37,1 +37,1 @@
+-                ttft_ms=float(ttft_ms),
++                ttft_ms=float(ttft_ms) * 1000.0,

@@ -1,0 +1,17 @@
+{
+  "timestamp": "2026-10-17T03:56:04Z",
+  "target_endpoint": "https://api.tokenfactory.nebius.com/v1",
+  "target_model": "nvidia/nemotron-3-super-120b-a12b",
+  "ttft_cold_ms": 974.87,
+  "ttft_warm_ms": 621.83,
+  "speedup_ratio": 1.57,
+  "ttft_reduction_pct": 36.21,
+  "prefix_hash": "db3fee196732a6d08de70fc1135d471ca1973093fd6b87b1722f38284c9a7987",
+  "tool_suspension_delay_sec": 2.5,
+  "stream_chunks_received": 34,
+  "invariants": {
+    "invariant_1_prefix_locality": true,
+    "invariant_2_zero_vram_suspension": true
+  },
+  "status": "PASSED"
+}

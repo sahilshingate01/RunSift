@@ -1,0 +1,165 @@
+{
+  "is_valid": true,
+  "invalidation_reason": null,
+  "launch_timestamp": "2026-10-16T21:25:18Z",
+  "provenance": {
+    "git_commit": "452e470642379eb4c81cb589112549cd6d5ad6ea",
+    "git_dirty": false,
+    "gateway_commit": "452e470642379eb4c81cb589112549cd6d5ad6ea",
+    "launch_timestamp": "2026-10-16T21:25:18Z",
+    "cli_args": [
+      "benchmarks/tensorroute_benchmark/harness.py",
+      "--mode",
+      "gauntlet",
+      "--task-set",
+      "coupled",
+      "--arm",
+      "baseline",
+      "--upstream-kind",
+      "llamacpp",
+      "--base-url",
+      "http://127.0.0.1:8083/v1",
+      "--gateway-url",
+      "http://127.0.0.1:8765/v1",
+      "--temperature",
+      "0.6",
+      "--max-turns",
+      "40",
+      "--repeats",
+      "3",
+      "--result-name",
+      "diag_coupled_pilot_gemma4_26b_131k",
+      "--server-launch-command=C:\\Users\\adamm_000\\.unsloth\\llama.cpp\\build\\bin\\Release\\llama-server.exe -m H:\\Caches\\huggingface\\hub\\models--unsloth--gemma-4-26B-A4B-it-GGUF\\snapshots\\c099eb48e663fd284577b04978a94ffccb261841\\gemma-4-26B-A4B-it-UD-Q4_K_M.gguf --host 127.0.0.1 --port 8083 -c 131072 -np 1 -ngl 99 --n-cpu-moe 22 --load-mode none -fa on --cache-reuse 64 --reasoning off"
+    ],
+    "timestamp": "2026-10-16T21:32:04Z",
+    "base_url": "http://127.0.0.1:8083/v1",
+    "server_launch_command": "C:\\Users\\adamm_000\\.unsloth\\llama.cpp\\build\\bin\\Release\\llama-server.exe -m H:\\Caches\\huggingface\\hub\\models--unsloth--gemma-4-26B-A4B-it-GGUF\\snapshots\\c099eb48e663fd284577b04978a94ffccb261841\\gemma-4-26B-A4B-it-UD-Q4_K_M.gguf --host 127.0.0.1 --port 8083 -c 131072 -np 1 -ngl 99 --n-cpu-moe 22 --load-mode none -fa on --cache-reuse 64 --reasoning off",
+    "engine_version": "not available",
+    "nvidia_smi": "NVIDIA GeForce RTX 3080 Ti, 617.14, 12288 MiB",
+    "models_endpoint_response": "not exposed by provider"
+  },
+  "timestamp": "2026-10-16T21:32:08Z",
+  "benchmark_suite": "TensorRoute-Bench v2 (Continuous 5-Trap Coupled Gauntlet (both))",
+  "model": "H:\\Caches\\huggingface\\hub\\models--unsloth--gemma-4-26B-A4B-it-GGUF\\snapshots\\c099eb48e663fd284577b04978a94ffccb261841\\gemma-4-26B-A4B-it-UD-Q4_K_M.gguf",
+  "upstream_base_url": "http://127.0.0.1:8083/v1",
+  "tasks_evaluated": 1,
+  "turns": 0,
+  "baseline": {
+    "tasks_solved": "0/1",
+    "solve_rate_pct": 0.0,
+    "context_overflow_count": 1,
+    "nudge_count": 0,
+    "nudge_rate_pct": 0.0,
+    "hints_count": 0,
+    "hints_per_session": 0.0,
+    "cache_hit_rate_pct": 0.0,
+    "prefix_match_rate_pct": 0.0,
+    "upstream_cached_tokens": 0,
+    "uncached_prefill_tokens": 781,
+    "avg_ttft_ms": 0.0,
+    "p50_ttft_ms": 0.0,
+    "p95_ttft_ms": 0.0,
+    "total_prompt_tokens": 781,
+    "peak_turn_prompt_tokens": 781,
+    "total_turns": 1,
+    "per_turn_ttft_ms": [],
+    "per_turn_prompt_tokens": [
+      781
+    ],
+    "per_turn_tools": [
+      "overflow"
+    ],
+    "per_turn_tests_passing": [
+      null
+    ],
+    "task_results": [
+      {
+        "task_id": "GAUNTLET-COUPLED",
+        "arm": "baseline",
+        "model": "H:\\Caches\\huggingface\\hub\\models--unsloth--gemma-4-26B-A4B-it-GGUF\\snapshots\\c099eb48e663fd284577b04978a94ffccb261841\\gemma-4-26B-A4B-it-UD-Q4_K_M.gguf",
+        "solved": false,
+        "modules_fixed": "0/5",
+        "passed_tests": 48,
+        "failed_tests": 8,
+        "turns": 1,
+        "total_prompt_tokens": 781,
+        "peak_turn_prompt_tokens": 781,
+        "total_completion_tokens": 0,
+        "upstream_cached_tokens": 0,
+        "avg_ttft_ms": 0.0,
+        "p50_ttft_ms": 0.0,
+        "p95_ttft_ms": 0.0,
+        "per_turn_ttft_ms": [],
+        "per_turn_prompt_tokens": [
+          781
+        ],
+        "cache_hits": 0,
+        "cache_hit_rate_pct": 0.0,
+        "prefix_matches": 0,
+        "prefix_match_rate_pct": 0.0,
+        "context_overflow": true,
+        "final_eval_status": "complete",
+        "per_turn_tools": [
+          "overflow"
+        ],
+        "per_turn_tests_passing": [
+          null
+        ],
+        "patch_diff": "",
+        "nudge_count": 0,
+        "nudge_rate_pct": 0.0,
+        "hints_count": 0,
+        "per_turn_raw_replies": [
+          "[EXCEPTION: [WinError 10061] No connection could be made because the target machine actively refused it]"
+        ],
+        "per_turn_tool_feedbacks": [
+          "[CONTEXT OVERFLOW - NO FEEDBACK]"
+        ],
+        "traps_solved": 0,
+        "solved_traps": [],
+        "regressions_introduced": [],
+        "regressions_repaired": 0,
+        "turns_to_repair": {},
+        "final_pass_to_pass_intact": true
+      }
+    ]
+  },
+  "cacheforge": {
+    "tasks_solved": "0/1",
+    "solve_rate_pct": 0.0,
+    "context_overflow_count": 0,
+    "nudge_count": 0,
+    "nudge_rate_pct": 0.0,
+    "hints_count": 0,
+    "hints_per_session": 0.0,
+    "cache_hit_rate_pct": 0.0,
+    "prefix_match_rate_pct": 0.0,
+    "upstream_cached_tokens": 0,
+    "uncached_prefill_tokens": 0,
+    "avg_ttft_ms": 0.0,
+    "p50_ttft_ms": 0.0,
+    "p95_ttft_ms": 0.0,
+    "total_prompt_tokens": 0,
+    "peak_turn_prompt_tokens": 0,
+    "total_turns": 0,
+    "per_turn_ttft_ms": [],
+    "per_turn_prompt_tokens": [],
+    "per_turn_tools": [],
+    "per_turn_tests_passing": [],
+    "task_results": []
+  },
+  "improvements": {
+    "solve_rate_delta_pct": 0.0,
+    "nudge_rate_delta_pct": 0.0,
+    "hints_per_session_delta": 0.0,
+    "cache_hit_rate_delta_pct": 0.0,
+    "prefix_match_rate_delta_pct": 0.0,
+    "ttft_reduction_pct": 0.0,
+    "token_savings_pct": 0.0,
+    "uncached_prefill_savings_pct": 0.0,
+    "peak_token_reduction_pct": 0.0,
+    "tokens_saved_total": 0
+  },
+  "ablation": "both",
+  "rep": 3
+}

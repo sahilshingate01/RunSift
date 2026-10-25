@@ -1,0 +1,81 @@
+{
+  "provenance_note": "Transcribed console output from exploratory manual runs. For automated script-produced artifacts, see diag_capacity_port_*.json.",
+  "timestamp": "2026-10-16T21:37:00Z",
+  "configurations": [
+    {
+      "model": "gemma-4-26B-A4B-it-UD-Q4_K_M",
+      "port": 8083,
+      "context_window": 131072,
+      "n_cpu_moe": 20,
+      "vram_load_mib": 11749,
+      "peak_vram_mib": 11785,
+      "prompt_tokens": 95219,
+      "ttft_ms": 71586.2,
+      "prefill_tok_s": 1330.1,
+      "gen_tokens": 28,
+      "gen_tok_s": 36.7,
+      "needle_found": true,
+      "note": "Crashed during slot eviction under 131k gauntlet load; VRAM headroom < 500 MiB"
+    },
+    {
+      "model": "gemma-4-26B-A4B-it-UD-Q4_K_M",
+      "port": 8083,
+      "context_window": 131072,
+      "n_cpu_moe": 22,
+      "vram_load_mib": 11144,
+      "peak_vram_mib": 11294,
+      "prompt_tokens": 95219,
+      "ttft_ms": 73931.0,
+      "prefill_tok_s": 1287.9,
+      "gen_tokens": 28,
+      "gen_tok_s": 38.0,
+      "needle_found": true,
+      "note": "Fits VRAM (<11.5 GB), but server died on multi-session slot eviction"
+    },
+    {
+      "model": "gemma-4-26B-A4B-it-UD-Q4_K_M",
+      "port": 8083,
+      "context_window": 98304,
+      "n_cpu_moe": 20,
+      "vram_load_mib": 11763,
+      "peak_vram_mib": 11875,
+      "prompt_tokens": 83779,
+      "ttft_ms": 57721.5,
+      "prefill_tok_s": 1451.4,
+      "gen_tokens": 30,
+      "gen_tok_s": 41.1,
+      "needle_found": true,
+      "note": "High VRAM load, headroom < 500 MiB"
+    },
+    {
+      "model": "gemma-4-26B-A4B-it-UD-Q4_K_M",
+      "port": 8083,
+      "context_window": 98304,
+      "n_cpu_moe": 22,
+      "vram_load_mib": 10704,
+      "peak_vram_mib": 10745,
+      "prompt_tokens": 83779,
+      "ttft_ms": 60701.1,
+      "prefill_tok_s": 1380.2,
+      "gen_tokens": 30,
+      "gen_tok_s": 39.6,
+      "needle_found": true,
+      "note": "Selected configuration for Gemma 4 26B; 1.58 GB VRAM headroom"
+    },
+    {
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q4_K_XL",
+      "port": 8082,
+      "context_window": 131072,
+      "n_cpu_moe": 40,
+      "vram_load_mib": 10142,
+      "peak_vram_mib": 10353,
+      "prompt_tokens": 94982,
+      "ttft_ms": 78072.6,
+      "prefill_tok_s": 1216.6,
+      "gen_tokens": 23,
+      "gen_tok_s": 39.9,
+      "needle_found": true,
+      "note": "Selected configuration for Nemotron 30B; 2.14 GB VRAM headroom"
+    }
+  ]
+}

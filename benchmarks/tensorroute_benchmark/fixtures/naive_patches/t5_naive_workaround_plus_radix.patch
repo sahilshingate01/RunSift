@@ -1,0 +1,10 @@
+--- a/src/tensorroute/pipeline.py
++++ b/src/tensorroute/pipeline.py
+@@ -62,1 +62,1 @@
+-        if worker is not None and matched_tokens >= min_cached_tokens:
++        if worker is not None and (matched_tokens * self.tree.chunk_size) >= min_cached_tokens:
+--- a/src/tensorroute/radix.py
++++ b/src/tensorroute/radix.py
+@@ -82,1 +82,1 @@
+-            matched_tokens += 1
++            matched_tokens += self.chunk_size

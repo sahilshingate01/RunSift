@@ -1,0 +1,2452 @@
+{
+  "experiment": "turn2_probe_section12",
+  "timestamp_utc": "2026-10-18T19:03:57.573965+00:00",
+  "provenance": {
+    "git_commit": "377639d",
+    "git_dirty": false,
+    "dirty_files": []
+  },
+  "model": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
+  "temperature": 0.6,
+  "max_tokens": 1024,
+  "requests_per_arm": 40,
+  "total_requests": 80,
+  "integrity_check": {
+    "raw_first_test_output_chars": 40141,
+    "recomputed_condensed_chars": 9662,
+    "gateway_header_chars_after": 9662,
+    "byte_identical_verified": true
+  },
+  "primary_metric": {
+    "condensed_no_tool_call_x": 5,
+    "condensed_total": 40,
+    "raw_no_tool_call_y": 1,
+    "raw_total": 40,
+    "fisher_exact_two_sided_p": 0.200723,
+    "alpha": 0.05
+  },
+  "secondary_metrics": {
+    "condensed_json_analysis_plan_count": 0,
+    "raw_json_analysis_plan_count": 0,
+    "condensed_unknown_tool_calls_count": 0,
+    "raw_unknown_tool_calls_count": 0
+  },
+  "section_12_4_wording": "Not reproduced in a 40-vs-40 probe (5 of 40 vs 1 of 40).",
+  "infra_retries": [],
+  "replies": [
+    {
+      "req_index": 1,
+      "pair": 1,
+      "arm": "raw",
+      "no_tool_call": false,
+      "parsed_tool": "read_file",
+      "parsed_tool_args": {
+        "path": "src/tensorroute/codec.py"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_60db8d887d144d05b1342930",
+          "type": "function",
+          "function": {
+            "name": "read_file",
+            "arguments": "{\"path\": \"src/tensorroute/codec.py\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 14608,
+      "completion_tokens": 31,
+      "upstream_cached_tokens": 0,
+      "ttft_ms": 1247.8,
+      "model_ms": 1323.51,
+      "condenser_header": "",
+      "tool_chars_before": 0,
+      "tool_chars_after": 0
+    },
+    {
+      "req_index": 2,
+      "pair": 1,
+      "arm": "condensed",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "ref_count"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_f3cf860ecc57498eae59450e",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"ref_count\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 4995,
+      "completion_tokens": 26,
+      "upstream_cached_tokens": 0,
+      "ttft_ms": 788.22,
+      "model_ms": 935.23,
+      "condenser_header": "v2",
+      "tool_chars_before": 40141,
+      "tool_chars_after": 9662
+    },
+    {
+      "req_index": 3,
+      "pair": 2,
+      "arm": "raw",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "class SSEChunkAssembler"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_332d15821e6e41a68e2bd58f",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"class SSEChunkAssembler\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 14608,
+      "completion_tokens": 29,
+      "upstream_cached_tokens": 12672,
+      "ttft_ms": 558.51,
+      "model_ms": 655.29,
+      "condenser_header": "",
+      "tool_chars_before": 0,
+      "tool_chars_after": 0
+    },
+    {
+      "req_index": 4,
+      "pair": 2,
+      "arm": "condensed",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "ref_count"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_37bdfc555d5e4bf4b3b06636",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"ref_count\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 4995,
+      "completion_tokens": 26,
+      "upstream_cached_tokens": 4224,
+      "ttft_ms": 355.01,
+      "model_ms": 448.97,
+      "condenser_header": "v2",
+      "tool_chars_before": 40141,
+      "tool_chars_after": 9662
+    },
+    {
+      "req_index": 5,
+      "pair": 3,
+      "arm": "raw",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "class SSEChunkAssembler"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_52fd3ab2c81443fe85f8b76a",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"class SSEChunkAssembler\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 14608,
+      "completion_tokens": 29,
+      "upstream_cached_tokens": 12672,
+      "ttft_ms": 416.76,
+      "model_ms": 515.57,
+      "condenser_header": "",
+      "tool_chars_before": 0,
+      "tool_chars_after": 0
+    },
+    {
+      "req_index": 6,
+      "pair": 3,
+      "arm": "condensed",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "ref_count"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_224a71d05cd94b26bb5e4eb5",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"ref_count\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 4995,
+      "completion_tokens": 26,
+      "upstream_cached_tokens": 4224,
+      "ttft_ms": 362.73,
+      "model_ms": 460.18,
+      "condenser_header": "v2",
+      "tool_chars_before": 40141,
+      "tool_chars_after": 9662
+    },
+    {
+      "req_index": 7,
+      "pair": 4,
+      "arm": "raw",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "class SSEChunkAssembler"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_8658b14541014b3bb37efbda",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"class SSEChunkAssembler\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 14608,
+      "completion_tokens": 29,
+      "upstream_cached_tokens": 12672,
+      "ttft_ms": 419.53,
+      "model_ms": 520.33,
+      "condenser_header": "",
+      "tool_chars_before": 0,
+      "tool_chars_after": 0
+    },
+    {
+      "req_index": 8,
+      "pair": 4,
+      "arm": "condensed",
+      "no_tool_call": true,
+      "parsed_tool": null,
+      "parsed_tool_args": null,
+      "native_tool_calls": [],
+      "raw_reply_content": "Okay, I've inspected the pytest output and identified the key failing tests across all 5 subsystems. Now I need to systematically fix each issue:\n\n1. **Radix Tree Reference Count Bug** (tests/test_radix.py failures)\n- Shared parent ref_count incorrectly set to 0 instead of 1 after eviction\n- Deep chain ref_count updates not happening properly\n- Need to examine src/tensorroute/radix.py and fix reference counting logic\n\n2. **Scheduler Partial Drain Issue** (tests/test_scheduler.py failures)\n- When flush_partial=True, partial batches not being emitted correctly\n- Drain all batches logic needs to handle remainder batches properly\n\n3. **Limiter Fractional Refill Bug** (tests/test_limiter.py failures)\n- Sub-second fractional refill calculations returning 0 tokens instead of expected values\n- Need to examine src/tensorroute/limiter.py and fix time calculation\n\n4. **Codec SSE Parsing Errors** (tests/test_codec.py failures)\n- JSON parsing errors when assembling delta chunks with extra data\n- Need to examine src/tensorroute/codec.py and fix JSON assembly\n\n5. **Telemetry Percentile Calculation Index Error** (tests/test_telemetry.py failures)\n- Index out of range when calculating percentiles with single sample or boundary cases\n- Need to examine src/tensorroute/telemetry.py and fix percentile_ttft bounds calculation\n\nLet's start by examining the radix tree implementation to fix the reference counting issues:\n\n\nI'll start by examining the radix tree implementation to understand the reference counting bug. Based on the test failures, the issue is with shared parent ref_count being 0 when it should be 1.\n\nKey failing tests:\n- test_radix_evict_expired_leaf_preserves_shared_parent_ref_count: expects ref_count == 1 but got 0\n- test_radix_evict_deep_chain_updates_all_ancestors_once: expects ref_count == 2 but got 1\n\nLet me read the radix.py file to understand the implementation.\n\n```json\n{\n  \"path\": \"src/tensorroute/radix.py\"\n}\n```",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 4995,
+      "completion_tokens": 454,
+      "upstream_cached_tokens": 4224,
+      "ttft_ms": 351.92,
+      "model_ms": 2298.07,
+      "condenser_header": "v2",
+      "tool_chars_before": 40141,
+      "tool_chars_after": 9662
+    },
+    {
+      "req_index": 9,
+      "pair": 5,
+      "arm": "raw",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "radix_evict_expired_leaf_preserves_shared_parent_ref_count"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_e55446049b6d464c8e5d6c89",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"radix_evict_expired_leaf_preserves_shared_parent_ref_count\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 14608,
+      "completion_tokens": 40,
+      "upstream_cached_tokens": 12672,
+      "ttft_ms": 423.72,
+      "model_ms": 564.1,
+      "condenser_header": "",
+      "tool_chars_before": 0,
+      "tool_chars_after": 0
+    },
+    {
+      "req_index": 10,
+      "pair": 5,
+      "arm": "condensed",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "ref_count"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_17cb7611a8f8462f9b42b2a2",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"ref_count\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 4995,
+      "completion_tokens": 26,
+      "upstream_cached_tokens": 4224,
+      "ttft_ms": 352.76,
+      "model_ms": 447.07,
+      "condenser_header": "v2",
+      "tool_chars_before": 40141,
+      "tool_chars_after": 9662
+    },
+    {
+      "req_index": 11,
+      "pair": 6,
+      "arm": "raw",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "ref_count"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_e54e613188cb4669b9f65c63",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"ref_count\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 14608,
+      "completion_tokens": 26,
+      "upstream_cached_tokens": 12672,
+      "ttft_ms": 511.17,
+      "model_ms": 589.34,
+      "condenser_header": "",
+      "tool_chars_before": 0,
+      "tool_chars_after": 0
+    },
+    {
+      "req_index": 12,
+      "pair": 6,
+      "arm": "condensed",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "ref_count"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_88e2e40855714b96ac949aea",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"ref_count\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 4995,
+      "completion_tokens": 26,
+      "upstream_cached_tokens": 4224,
+      "ttft_ms": 438.03,
+      "model_ms": 533.13,
+      "condenser_header": "v2",
+      "tool_chars_before": 40141,
+      "tool_chars_after": 9662
+    },
+    {
+      "req_index": 13,
+      "pair": 7,
+      "arm": "raw",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "radix_evict_expired_leaf_preserves_shared_parent_ref_count"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_cfbb09a4b83648d8b4c27a9f",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"radix_evict_expired_leaf_preserves_shared_parent_ref_count\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 14608,
+      "completion_tokens": 40,
+      "upstream_cached_tokens": 12672,
+      "ttft_ms": 437.26,
+      "model_ms": 536.37,
+      "condenser_header": "",
+      "tool_chars_before": 0,
+      "tool_chars_after": 0
+    },
+    {
+      "req_index": 14,
+      "pair": 7,
+      "arm": "condensed",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "ref_count"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_883f8389fdce4b589c91a234",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"ref_count\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 4995,
+      "completion_tokens": 26,
+      "upstream_cached_tokens": 4224,
+      "ttft_ms": 351.75,
+      "model_ms": 698.17,
+      "condenser_header": "v2",
+      "tool_chars_before": 40141,
+      "tool_chars_after": 9662
+    },
+    {
+      "req_index": 15,
+      "pair": 8,
+      "arm": "raw",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "class SSEChunkAssembler"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_7a78e8effa5a4f3a861c0da5",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"class SSEChunkAssembler\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 14608,
+      "completion_tokens": 29,
+      "upstream_cached_tokens": 12672,
+      "ttft_ms": 542.64,
+      "model_ms": 643.32,
+      "condenser_header": "",
+      "tool_chars_before": 0,
+      "tool_chars_after": 0
+    },
+    {
+      "req_index": 16,
+      "pair": 8,
+      "arm": "condensed",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "ref_count"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_623123f23689403b8aac40ad",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"ref_count\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 4995,
+      "completion_tokens": 26,
+      "upstream_cached_tokens": 4224,
+      "ttft_ms": 358.96,
+      "model_ms": 453.11,
+      "condenser_header": "v2",
+      "tool_chars_before": 40141,
+      "tool_chars_after": 9662
+    },
+    {
+      "req_index": 17,
+      "pair": 9,
+      "arm": "raw",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "class SSEChunkAssembler"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_3c5a52d9eb5648d3804be78c",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"class SSEChunkAssembler\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 14608,
+      "completion_tokens": 29,
+      "upstream_cached_tokens": 12672,
+      "ttft_ms": 409.72,
+      "model_ms": 550.72,
+      "condenser_header": "",
+      "tool_chars_before": 0,
+      "tool_chars_after": 0
+    },
+    {
+      "req_index": 18,
+      "pair": 9,
+      "arm": "condensed",
+      "no_tool_call": true,
+      "parsed_tool": null,
+      "parsed_tool_args": null,
+      "native_tool_calls": [],
+      "raw_reply_content": "I have analyzed the pytest output and can see failures across all 5 subsystems as described in the incident. Let me start by addressing the first failing test in the radix module, then systematically work through all the issues.\n\nBased on the test failures, I can identify the specific issues:\n1. Radix tree reference counting bug - ref_count is 0 when it should be 1\n2. Scheduler batch draining issue - not emitting partial batches correctly\n3. Limiter fractional refill arithmetic issue - returning 0 tokens instead of calculated amount\n4. Codec SSE assembly JSON parsing issue - extra data in JSON\n5. Telemetry percentile calculation bounds issue - IndexError on single sample windows\n\nLet me start by examining the radix tree implementation to fix the reference counting bug.\n\n```json\n{\n  \"analysis\": \"The pytest output shows 12 failing tests across all 5 subsystems. The first failure is in test_radix.py with two specific issues: 1) test_radix_evict_expired_leaf_preserves_shared_parent_ref_count shows ref_count=0 when it should be 1, and 2) test_radix_evict_deep_chain_updates_all_ancestors_once shows ref_count=1 when it should be 2. These indicate a reference counting bug in the PrefixRadixTree implementation.\",\n  \"plan\": \"First, I'll examine the radix tree implementation to understand the reference counting logic. Then I'll fix the reference counting bug that causes premature eviction of shared parent prefixes. After fixing this, I'll run pytest again to see if it resolves the radix-related failures.\",\n  \"commands\": [\n    {\n      \"name\": \"read_file\",\n      \"args\": {\n        \"path\": \"src/tensorroute/radix.py\"\n      }\n    }\n  ]\n}\n```",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 4995,
+      "completion_tokens": 386,
+      "upstream_cached_tokens": 4224,
+      "ttft_ms": 439.62,
+      "model_ms": 1707.83,
+      "condenser_header": "v2",
+      "tool_chars_before": 40141,
+      "tool_chars_after": 9662
+    },
+    {
+      "req_index": 19,
+      "pair": 10,
+      "arm": "raw",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "radix_evict_expired_leaf_preserves_shared_parent_ref_count"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_84a5598480104f56a5567a40",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"radix_evict_expired_leaf_preserves_shared_parent_ref_count\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 14608,
+      "completion_tokens": 40,
+      "upstream_cached_tokens": 12672,
+      "ttft_ms": 419.93,
+      "model_ms": 543.2,
+      "condenser_header": "",
+      "tool_chars_before": 0,
+      "tool_chars_after": 0
+    },
+    {
+      "req_index": 20,
+      "pair": 10,
+      "arm": "condensed",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "ref_count"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_74118ed9e8c9401fb0c4ab12",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"ref_count\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 4995,
+      "completion_tokens": 26,
+      "upstream_cached_tokens": 4224,
+      "ttft_ms": 476.39,
+      "model_ms": 561.94,
+      "condenser_header": "v2",
+      "tool_chars_before": 40141,
+      "tool_chars_after": 9662
+    },
+    {
+      "req_index": 21,
+      "pair": 11,
+      "arm": "raw",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "class SSEChunkAssembler"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_3fca0506df3740e383b09979",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"class SSEChunkAssembler\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 14608,
+      "completion_tokens": 29,
+      "upstream_cached_tokens": 12672,
+      "ttft_ms": 414.92,
+      "model_ms": 497.06,
+      "condenser_header": "",
+      "tool_chars_before": 0,
+      "tool_chars_after": 0
+    },
+    {
+      "req_index": 22,
+      "pair": 11,
+      "arm": "condensed",
+      "no_tool_call": true,
+      "parsed_tool": null,
+      "parsed_tool_args": null,
+      "native_tool_calls": [],
+      "raw_reply_content": "I\u2019ve run the full pytest suite and identified the failures across all five subsystems. Below is my plan for fixing each issue:\n\n1. **radix** \u2013 Fix reference-count accounting when evicting expired leaf nodes. The failing tests show that parent nodes are being evicted with a ref\u2011count of\u202f0 when they should retain a count of\u202f1 (and deeper chains are not updated correctly).\n\n2. **scheduler** \u2013 Correct `drain_all_batches` to emit the final partial batch when `flush_partial=True`. The tests expect 2 batches but only 1 is being returned, and the partial\u2011batch logic is not triggered.\n\n3. **limiter** \u2013 Restore accurate fractional elapsed\u2011time calculation for sub\u2011second refill intervals. Current logic always returns 0 tokens because the elapsed\u2011time computation truncates to whole seconds.\n\n4. **codec** \u2013 Fix JSON parsing errors in the SSE codec assembler caused by extra data in the JSON payload. The assembler should correctly deserialize tool\u2011call arguments from concatenated chunks.\n\n5. **telemetry** \u2013 Resolve `IndexError` in percentile calculations when the filtered latency list is empty or too short. The percentile index must be safely clamped and the nearest\u2011rank logic must handle single\u2011sample windows.\n\nI will address each module in order, starting with the radix tree reference\u2011count bug. To proceed, I need to inspect the current implementation of the radix tree and its eviction logic.\n\nPlease provide the content of `src/tensorroute/radix.py` so I can read and edit the relevant code.",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 4995,
+      "completion_tokens": 331,
+      "upstream_cached_tokens": 4224,
+      "ttft_ms": 443.33,
+      "model_ms": 1916.89,
+      "condenser_header": "v2",
+      "tool_chars_before": 40141,
+      "tool_chars_after": 9662
+    },
+    {
+      "req_index": 23,
+      "pair": 12,
+      "arm": "raw",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "SSEChunkAssembler"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_15974449ad814cbb92e78175",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"SSEChunkAssembler\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "I have analyzed the test failures and identified the key subsystems that need repair. The failures are concentrated in 5 core areas matching the incident description:\n\n1. **Codec tool-call concatenation parsing failures** - 2 test failures in `test_codec.py`\n2. **Limiter fractional refill arithmetic** - 2 test failures in `test_limiter.py`\n3. **Radix tree reference count bugs** - 2 test failures in `test_radix.py`\n4. **Scheduler partial batch draining** - 3 test failures in `test_scheduler.py`\n5. **Telemetry percentile bounds calculation** - 3 test failures in `test_telemetry.py`\n\nLet's start by examining the codec module since it has failing tests that indicate JSON parsing issues with tool call concatenation.\n\nBased on the error messages, I need to examine the SSE codec assembler implementation to understand how it's constructing JSON arguments that are causing parsing failures. Let me first locate and inspect the relevant files.\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 14608,
+      "completion_tokens": 232,
+      "upstream_cached_tokens": 12672,
+      "ttft_ms": 417.21,
+      "model_ms": 2521.92,
+      "condenser_header": "",
+      "tool_chars_before": 0,
+      "tool_chars_after": 0
+    },
+    {
+      "req_index": 24,
+      "pair": 12,
+      "arm": "condensed",
+      "no_tool_call": false,
+      "parsed_tool": "read_file",
+      "parsed_tool_args": {
+        "path": "src/tensorroute/radix.py"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_efd98f2f1499443587e80190",
+          "type": "function",
+          "function": {
+            "name": "read_file",
+            "arguments": "{\"path\": \"src/tensorroute/radix.py\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "Okay, I\u2019ve run the full test suite and identified the failing tests across all five subsystems. The key failures are:\n\n1. **Radix Tree Reference Counting Bugs** (`test_radix_evict_expired_leaf_preserves_shared_parent_ref_count`, `test_radix_evict_deep_chain_updates_all_ancestors_once`) \u2013 ref counts are wrong after eviction, nodes end up with `ref_count=0` when they should be `1` or `2`.\n\n2. **Batch Scheduler Draining Logic Flaw** \u2013 `drain_all_batches(flush_partial=True)` only returns 1 batch instead of the expected 2 (or 1 in another case), meaning partial tail batches aren\u2019t being emitted.\n\n3. **Token Bucket Refill Arithmetic Bug** \u2013 `available_tokens()` returns `0.0` instead of the expected ~`50.0` for sub-second intervals, indicating incorrect elapsed time handling.\n\n4. **Codec SSE Parsing Errors** \u2013 JSON parsing fails on concatenated tool call deltas (`Extra data: line 1 column 8/10`) due to malformed JSON produced by the assembler.\n\n5. **Telemetry Percentile Index Out\u2011of\u2011Range** \u2013 `percentile_ttft()` crashes with `IndexError: list index out of range` when the filtered list is empty (single\u2011sample windows or boundary percentiles).\n\nI need to address each of these issues systematically, starting with the most critical bugs. I\u2019ll first look at the radix tree implementation to fix the reference counting errors.\n\n**Next step:** Read `src/tensorroute/radix.py` to locate the reference counting logic and determine the exact fix needed. Then I\u2019ll edit the file to correct the ref count handling during eviction and chain updates.\n\nLet\u2019s read the radix module:\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 4995,
+      "completion_tokens": 421,
+      "upstream_cached_tokens": 4224,
+      "ttft_ms": 449.35,
+      "model_ms": 4892.07,
+      "condenser_header": "v2",
+      "tool_chars_before": 40141,
+      "tool_chars_after": 9662
+    },
+    {
+      "req_index": 25,
+      "pair": 13,
+      "arm": "raw",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "radix_evict_expired_leaf_preserves_shared_parent_ref_count"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_72c876aaf2294ad4be813f0b",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"radix_evict_expired_leaf_preserves_shared_parent_ref_count\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 14608,
+      "completion_tokens": 40,
+      "upstream_cached_tokens": 12672,
+      "ttft_ms": 537.98,
+      "model_ms": 716.41,
+      "condenser_header": "",
+      "tool_chars_before": 0,
+      "tool_chars_after": 0
+    },
+    {
+      "req_index": 26,
+      "pair": 13,
+      "arm": "condensed",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "ref_count"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_b9c9b331951a455f8f3962dc",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"ref_count\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 4995,
+      "completion_tokens": 26,
+      "upstream_cached_tokens": 4224,
+      "ttft_ms": 430.91,
+      "model_ms": 810.05,
+      "condenser_header": "v2",
+      "tool_chars_before": 40141,
+      "tool_chars_after": 9662
+    },
+    {
+      "req_index": 27,
+      "pair": 14,
+      "arm": "raw",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "class SSEChunkAssembler"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_095e5bd108e44902beed3b06",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"class SSEChunkAssembler\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 14608,
+      "completion_tokens": 29,
+      "upstream_cached_tokens": 12672,
+      "ttft_ms": 587.75,
+      "model_ms": 745.84,
+      "condenser_header": "",
+      "tool_chars_before": 0,
+      "tool_chars_after": 0
+    },
+    {
+      "req_index": 28,
+      "pair": 14,
+      "arm": "condensed",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "ref_count"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_2213bceb6686410da918b580",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"ref_count\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "## 1\ufe0f\u20e3  Diagnose the failing modules\n\nI\u2019ll start by looking at the individual source files that are mentioned in the failing tests.  \nThe `search_code` tool can quickly locate the relevant definitions inside `src/tensorroute/`.\n\n**Radix\u2011tree reference\u2011count bug** \u2013 search for the eviction / ref\u2011count logic.  \n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 4995,
+      "completion_tokens": 105,
+      "upstream_cached_tokens": 4224,
+      "ttft_ms": 360.57,
+      "model_ms": 1245.84,
+      "condenser_header": "v2",
+      "tool_chars_before": 40141,
+      "tool_chars_after": 9662
+    },
+    {
+      "req_index": 29,
+      "pair": 15,
+      "arm": "raw",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "class SSEChunkAssembler"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_5bec5b272bef461f9c9018ea",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"class SSEChunkAssembler\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 14608,
+      "completion_tokens": 29,
+      "upstream_cached_tokens": 12672,
+      "ttft_ms": 476.62,
+      "model_ms": 874.33,
+      "condenser_header": "",
+      "tool_chars_before": 0,
+      "tool_chars_after": 0
+    },
+    {
+      "req_index": 30,
+      "pair": 15,
+      "arm": "condensed",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "ref_count"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_d649688e56124e49bf57acaf",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"ref_count\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 4995,
+      "completion_tokens": 26,
+      "upstream_cached_tokens": 4224,
+      "ttft_ms": 417.89,
+      "model_ms": 496.14,
+      "condenser_header": "v2",
+      "tool_chars_before": 40141,
+      "tool_chars_after": 9662
+    },
+    {
+      "req_index": 31,
+      "pair": 16,
+      "arm": "raw",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "class SSEChunkAssembler"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_9d2d9232ec64413c8105a909",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"class SSEChunkAssembler\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 14608,
+      "completion_tokens": 29,
+      "upstream_cached_tokens": 12672,
+      "ttft_ms": 477.76,
+      "model_ms": 559.44,
+      "condenser_header": "",
+      "tool_chars_before": 0,
+      "tool_chars_after": 0
+    },
+    {
+      "req_index": 32,
+      "pair": 16,
+      "arm": "condensed",
+      "no_tool_call": false,
+      "parsed_tool": "read_file",
+      "parsed_tool_args": {
+        "path": "src/tensorroute/scheduler.py"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_38085cac73af4da0a4a08a0c",
+          "type": "function",
+          "function": {
+            "name": "read_file",
+            "arguments": "{\"path\": \"src/tensorroute/scheduler.py\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 4995,
+      "completion_tokens": 31,
+      "upstream_cached_tokens": 4224,
+      "ttft_ms": 368.82,
+      "model_ms": 1256.27,
+      "condenser_header": "v2",
+      "tool_chars_before": 40141,
+      "tool_chars_after": 9662
+    },
+    {
+      "req_index": 33,
+      "pair": 17,
+      "arm": "raw",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "class SSEChunkAssembler"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_36b55cc1e3384d2496a90474",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"class SSEChunkAssembler\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 14608,
+      "completion_tokens": 29,
+      "upstream_cached_tokens": 12672,
+      "ttft_ms": 494.48,
+      "model_ms": 579.28,
+      "condenser_header": "",
+      "tool_chars_before": 0,
+      "tool_chars_after": 0
+    },
+    {
+      "req_index": 34,
+      "pair": 17,
+      "arm": "condensed",
+      "no_tool_call": true,
+      "parsed_tool": null,
+      "parsed_tool_args": null,
+      "native_tool_calls": [],
+      "raw_reply_content": "## 1\ufe0f\u20e3  Radix\u2011tree reference\u2011count regression (OB\u201101)\n\n**Root cause** \u2013 The `evict` logic decrements the `ref_count` of a leaf\u2019s ancestors *before* it has verified that the leaf is actually gone. When several leaves share a common prefix, the shared parent can be evicted while another leaf still holds a valid reference, leaving its `ref_count` at **0** while the test expects it to be **1**.\n\n**Fix** \u2013 Move the reference\u2011count decrement into the `remove_prefix` path **after** the node has been detached from the tree, and guard it with an explicit `if node.ref_count > 0` check.\n\n```python\n# src/tensorroute/radix.py\n@@\n-        # Old (buggy) flow\n-        node = node.parent\n-        node.ref_count -= 1          # <-- decrements even if leaf was already removed\n+        # New (correct) flow\n+        if node.ref_count > 0:\n+            node.ref_count -= 1      # decrement only once the node is truly being evicted\n+        node = node.parent\n```\n\n*We also add a defensive guard around the whole eviction routine to make sure we only walk up while the node exists.*\n\n```python\n        # Walk up the ancestry chain and decrement each node\u2019s ref_count exactly once\n        while node is not None and node is not self.root:\n            if node.ref_count > 0:\n                node.ref_count -= 1\n            node = node.parent\n```\n\n---\n\n## 2\ufe0f\u20e3  Batch\u2011scheduler partial\u2011drain bug (OB\u201102)\n\n**Root cause** \u2013 `drain_all_batches` stops emitting batches as soon as it meets a batch whose `size < max_batch_size`. When `flush_partial=True` the scheduler must still emit the *last* (possibly smaller) batch, but the current loop exits early.\n\n**Fix** \u2013 Continue iterating until the internal queue is empty, and only break when `flush_partial=False` **and** the remaining batch is larger than `max_batch_size`.\n\n```python\n# src/tensorroute/scheduler.py\n@@\n-        while batch and len(batch.items) < self.max_batch_size:\n-            batches.append(batch)\n-            batch = self._pop_next()\n+        # Emit batches while there is work, respecting flush_partial semantics\n+        while self._queue:\n+            batch = self._pop_next()\n+            if batch and len(batch.items) < self.max_batch_size:\n+                if self.flush_partial or len(batch.items) > 0:\n+                    batches.append(batch)\n+                else:\n+                    # skip empty batches when flush_partial is off\n+                    continue\n+            else:\n+                # full batch \u2013 always emit\n+                batches.append(batch)\n```\n\nThe guard `if self.flush_partial or len(batch.items) > 0` guarantees that a non\u2011empty partial batch is returned when the caller explicitly requested it.\n\n---\n\n## 3\ufe0f\u20e3  Token\u2011bucket fractional refill arithmetic (OB\u201103)\n\n**Root cause** \u2013 The refill calculation uses `elapsed_ms` (an integer) and multiplies by `self.refill_rate_per_sec / 1000`. Because `elapsed_ms` is cast to `int` before the multiplication, sub\u2011second granularity is lost, causing the bucket to appear empty for rapid polls.\n\n**Fix** \u2013 Keep the elapsed time in **seconds** (a float) for the refill formula, then clamp the result to the bucket capacity.\n\n```python\n# src/tensorroute/limiter.py\n@@\n-        elapsed_ms = (now - self.start_ts) * 1000\n-        tokens_to_add = int(elapsed_ms * self.refill_rate_per_sec / 1000)\n+        # Use exact fractional seconds to preserve sub\u2011second refill amounts\n+        elapsed_sec = now - self.start_ts\n+        tokens_to_add = int(elapsed_sec * self.refill_rate_per_sec)\n```\n\nThe `int()` conversion now operates on the *exact* fractional seconds, restoring the expected ~0.5\u2011token refill for a 100\u202fms tick with a 200\u202ftokens\u2011per\u2011second rate.\n\n---\n\n## 4\ufe0f\u20e3  SSE codec concatenation bug (OB\u201104)\n\n**Root cause** \u2013 The codec receives streaming JSON lines that are concatenated into a single payload. The parser assumes the payload is a *complete* JSON object, but the incoming stream may split a JSON object across chunks, leaving stray characters (e.g. a leading `{` or stray commas) before the next valid token.\n\n**Fix** \u2013 Buffer incoming chunks and only",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 4995,
+      "completion_tokens": 1024,
+      "upstream_cached_tokens": 4224,
+      "ttft_ms": 639.9,
+      "model_ms": 15008.55,
+      "condenser_header": "v2",
+      "tool_chars_before": 40141,
+      "tool_chars_after": 9662
+    },
+    {
+      "req_index": 35,
+      "pair": 18,
+      "arm": "raw",
+      "no_tool_call": true,
+      "parsed_tool": null,
+      "parsed_tool_args": null,
+      "native_tool_calls": [],
+      "raw_reply_content": "I\u2019ve run the full 45-test suite and identified the failing tests across all five subsystems. Below is the consolidated failure list by module:\n\n1. **radix**: 3 failures\n   - `test_radix_evict_expired_leaf_preserves_shared_parent_ref_count`\n   - `test_radix_evict_deep_chain_updates_all_ancestors_once`\n2. **scheduler**: 3 failures\n   - `test_scheduler_drain_all_flushes_partial_remainder_when_true`\n   - `test_scheduler_drain_all_retains_partial_remainder_when_false`\n   - `test_scheduler_drain_single_item_with_flush_partial_true`\n3. **limiter**: 2 failures\n   - `test_limiter_subsecond_fractional_refill`\n   - `test_limiter_multiple_subsecond_ticks_accumulate_accurately`\n4. **codec**: 2 failures\n   - `test_codec_concatenates_single_tool_call_arguments_across_chunks`\n   - `test_codec_concatenates_multiple_indexed_tool_calls`\n5. **telemetry**: 3 failures\n   - `test_telemetry_single_sample_percentiles_do_not_overflow`\n   - `test_telemetry_ten_sample_nearest_rank_percentiles`\n   - `test_telemetry_token_reuse_and_hit_rate`\n\nI\u2019ll start by fixing the radix reference-counting issue, which is causing the two radix tests to fail.\n\n---\n<function=edit_file>\n<parameter=path>\nsrc/tensorroute/radix.py\n</parameter>\n<parameter=old_text>\n        if node.is_expired(now, self.default_ttl):\n            # Underflow protection: never decrement below zero\n            if node.ref_count > 0:\n                node.ref_count -= 1\n            # Always remove the leaf regardless\n            parent.remove_child(node_key)\n            return True\n</parameter>\n<parameter=new_text>\n        if node.is_expired(now, self.default_ttl):\n            # Underflow protection: never decrement below zero\n            if node.ref_count > 0:\n                node.ref_count -= 1\n            # Only remove the leaf if ref_count reaches zero\n            if node.ref_count == 0:\n                parent.remove_child(node_key)\n            return True\n</parameter>\n</function>\n</tool_call>",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 14608,
+      "completion_tokens": 513,
+      "upstream_cached_tokens": 12672,
+      "ttft_ms": 415.75,
+      "model_ms": 4086.61,
+      "condenser_header": "",
+      "tool_chars_before": 0,
+      "tool_chars_after": 0
+    },
+    {
+      "req_index": 36,
+      "pair": 18,
+      "arm": "condensed",
+      "no_tool_call": false,
+      "parsed_tool": "read_file",
+      "parsed_tool_args": {
+        "path": "src/tensorroute/radix.py"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_08ca786a0b424629b8b3b4c0",
+          "type": "function",
+          "function": {
+            "name": "read_file",
+            "arguments": "{\"path\": \"src/tensorroute/radix.py\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "Okay, I've analyzed the pytest output and identified the core issues across all 5 subsystems. Each failing test maps directly to the incident tickets described. Here's my targeted fix plan:\n\n1. **Radix Tree Reference Count Bug** (OB-01-radix-evict-refcount)\n- Tests failing: test_radix_evict_expired_leaf_preserves_shared_parent_ref_count, test_radix_evict_deep_chain_updates_all_ancestors_once\n- Root cause: Reference counting logic in radix tree eviction not incrementing/decrementing correctly when nodes share prefixes\n- Fix needed: Modify ref_count handling during node expiration and deletion\n\n2. **Batch Scheduler Drain Logic Bug** (OB-02-scheduler-partial-drain)\n- Tests failing: test_scheduler_drain_all_flushes_partial_remainder_when_true, test_scheduler_drain_all_retains_partial_remainder_when_false, test_scheduler_drain_single_item_with_flush_partial_true\n- Root cause: Drain implementation not properly handling partial batches when flush_partial=True\n- Fix needed: Ensure tail batches are emitted when requested\n\n3. **Token Bucket Refill Arithmetic Bug** (OB-03-limiter-fractional-refill)\n- Tests failing: test_limiter_subsecond_fractional_refill, test_limiter_multiple_subsecond_ticks_accumulate_accurately\n- Root cause: Fractional time calculation truncated to integer instead of preserving fractional seconds\n- Fix needed: Use precise fractional elapsed time computation\n\n4. **Codec SSE Assembly Bug** (OB-04-codec-toolcall-concat)\n- Tests failing: test_codec_concatenates_single_tool_call_arguments_across_chunks, test_codec_concatenates_multiple_indexed_tool_calls\n- Root cause: JSON parsing issue in SSE codec assembler due to malformed concatenated JSON\n- Fix needed: Properly parse concatenated JSON chunks\n\n5. **Telemetry Percentile Calculation Bug** (OB-05-telemetry-percentile-bounds)\n- Tests failing: test_telemetry_single_sample_percentiles_do_not_overflow, test_telemetry_ten_sample_nearest_rank_percentiles, test_telemetry_token_reuse_and_hit_rate\n- Root cause: Index bounds calculation error in percentile computation causing IndexError\n- Fix needed: Correct percentile index calculation logic\n\nLet's start with the radix tree reference counting bug since it's the first failing test in the output. I'll examine the radix.py implementation to understand the current reference counting logic.\n\nNow I'll inspect the radix tree implementation to understand the reference counting bug:\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 4995,
+      "completion_tokens": 604,
+      "upstream_cached_tokens": 4224,
+      "ttft_ms": 446.85,
+      "model_ms": 7070.41,
+      "condenser_header": "v2",
+      "tool_chars_before": 40141,
+      "tool_chars_after": 9662
+    },
+    {
+      "req_index": 37,
+      "pair": 19,
+      "arm": "raw",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "class SSEChunkAssembler"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_324f52725e7848d79e32f8d5",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"class SSEChunkAssembler\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 14608,
+      "completion_tokens": 29,
+      "upstream_cached_tokens": 12672,
+      "ttft_ms": 464.43,
+      "model_ms": 603.05,
+      "condenser_header": "",
+      "tool_chars_before": 0,
+      "tool_chars_after": 0
+    },
+    {
+      "req_index": 38,
+      "pair": 19,
+      "arm": "condensed",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "ref_count"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_60886b133ebd43c0bfac6a89",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"ref_count\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 4995,
+      "completion_tokens": 26,
+      "upstream_cached_tokens": 4224,
+      "ttft_ms": 359.86,
+      "model_ms": 637.17,
+      "condenser_header": "v2",
+      "tool_chars_before": 40141,
+      "tool_chars_after": 9662
+    },
+    {
+      "req_index": 39,
+      "pair": 20,
+      "arm": "raw",
+      "no_tool_call": false,
+      "parsed_tool": "read_file",
+      "parsed_tool_args": {
+        "path": "src/tensorroute/limiter.py"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_e7d7bd70a12042c5bcced900",
+          "type": "function",
+          "function": {
+            "name": "read_file",
+            "arguments": "{\"path\": \"src/tensorroute/limiter.py\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "I have analyzed the test failures and identified the key issues across the 5 subsystems. Here's my structured diagnosis and repair plan:\n\n## Current Test Failure Summary\n- **12 failing tests** across 5 core subsystems\n- All failures are isolated to specific modules mentioned in the incident\n- Most failures relate to reference counting, fractional arithmetic, and boundary condition handling\n\n## Root Cause Analysis by Subsystem\n\n### 1. Codec Module (2 failures)\n- **Issue**: JSON parsing errors in `test_codec_concatenates_*_across_chunks`\n- **Pattern**: Extra data errors when parsing tool call arguments\n- **Location**: `src/tensorroute/codec.py` likely has malformed JSON assembly\n\n### 2. Limiter Module (2 failures)\n- **Issue**: Token bucket refill arithmetic returning 0.0 instead of expected values\n- **Pattern**: Fractional refill calculations are truncated to 0\n- **Location**: `src/tensorroute/limiter.py` has incorrect time-based token calculation\n\n### 3. Radix Module (2 failures)\n- **Issue**: Reference count underflow during leaf eviction\n- **Pattern**: Shared parent ref_counts incorrectly decremented to 0\n- **Location**: `src/tensorroute/radix.py` has flawed eviction logic\n\n### 4. Scheduler Module (3 failures)\n- **Issue**: Batch draining incorrectly handles partial batches\n- **Pattern**: `flush_partial=True` not properly emitting partial tail batches\n- **Location**: `src/tensorroute/scheduler.py` has incorrect batch emission logic\n\n### 5. Telemetry Module (3 failures)\n- **Issue**: Percentile index bounds miscalculation causing `IndexError`\n- **Pattern**: Off-by-one errors in nearest-rank percentile indexing\n- **Location**: `src/tensorroute/telemetry.py` has incorrect percentile calculation\n\n## Repair Strategy\nI'll address each subsystem systematically, starting with the most critical failures. For each fix:\n1. Read the affected source file\n2. Identify the exact bug location using test failure details\n3. Apply minimal targeted fix\n4. Verify with `run_pytest`\n\nLet me start with the **limiter module** failures since they show clear mathematical issues:\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 14608,
+      "completion_tokens": 503,
+      "upstream_cached_tokens": 12672,
+      "ttft_ms": 461.77,
+      "model_ms": 4952.7,
+      "condenser_header": "",
+      "tool_chars_before": 0,
+      "tool_chars_after": 0
+    },
+    {
+      "req_index": 40,
+      "pair": 20,
+      "arm": "condensed",
+      "no_tool_call": false,
+      "parsed_tool": "read_file",
+      "parsed_tool_args": {
+        "path": "src/tensorroute/radix.py"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_0dc5c7f5be594f2982979c04",
+          "type": "function",
+          "function": {
+            "name": "read_file",
+            "arguments": "{\"path\": \"src/tensorroute/radix.py\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "I have analyzed the pytest output and identified the failing tests across all 5 subsystems. Let me start by examining the radix tree reference counting issue, which is the first failing test in the radix module.\n\nBased on the error messages, I can see several specific failures:\n1. Radix tree tests are failing due to incorrect reference count accounting during eviction\n2. Scheduler tests are failing to properly drain partial batches \n3. Limiter tests are showing zero tokens instead of expected fractional refills\n4. Codec tests have JSON parsing errors with extra data\n5. Telemetry tests are crashing with IndexError on percentile calculations\n\nLet me start by examining the radix tree implementation to understand the reference counting bug.\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 4995,
+      "completion_tokens": 179,
+      "upstream_cached_tokens": 4224,
+      "ttft_ms": 406.68,
+      "model_ms": 1107.88,
+      "condenser_header": "v2",
+      "tool_chars_before": 40141,
+      "tool_chars_after": 9662
+    },
+    {
+      "req_index": 41,
+      "pair": 21,
+      "arm": "raw",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "class SSEChunkAssembler"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_62173ed32fa345149ebfc5b2",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"class SSEChunkAssembler\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 14608,
+      "completion_tokens": 29,
+      "upstream_cached_tokens": 12672,
+      "ttft_ms": 508.82,
+      "model_ms": 607.45,
+      "condenser_header": "",
+      "tool_chars_before": 0,
+      "tool_chars_after": 0
+    },
+    {
+      "req_index": 42,
+      "pair": 21,
+      "arm": "condensed",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "ref_count"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_ae7edf24ac314882aaf8181b",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"ref_count\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 4995,
+      "completion_tokens": 26,
+      "upstream_cached_tokens": 4224,
+      "ttft_ms": 420.86,
+      "model_ms": 509.14,
+      "condenser_header": "v2",
+      "tool_chars_before": 40141,
+      "tool_chars_after": 9662
+    },
+    {
+      "req_index": 43,
+      "pair": 22,
+      "arm": "raw",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "class SSEChunkAssembler"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_ca8ec3b8137b4fa0bfd7d174",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"class SSEChunkAssembler\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 14608,
+      "completion_tokens": 29,
+      "upstream_cached_tokens": 12672,
+      "ttft_ms": 414.87,
+      "model_ms": 515.6,
+      "condenser_header": "",
+      "tool_chars_before": 0,
+      "tool_chars_after": 0
+    },
+    {
+      "req_index": 44,
+      "pair": 22,
+      "arm": "condensed",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "ref_count"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_587959a4b4ac42a495824cc1",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"ref_count\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 4995,
+      "completion_tokens": 26,
+      "upstream_cached_tokens": 4224,
+      "ttft_ms": 353.94,
+      "model_ms": 450.09,
+      "condenser_header": "v2",
+      "tool_chars_before": 40141,
+      "tool_chars_after": 9662
+    },
+    {
+      "req_index": 45,
+      "pair": 23,
+      "arm": "raw",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "\"test_codec_concatenates_single_tool_call_arguments_across_chunks\""
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_8cb4854b51a042a5b990cf76",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"\\\"test_codec_concatenates_single_tool_call_arguments_across_chunks\\\"\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 14608,
+      "completion_tokens": 42,
+      "upstream_cached_tokens": 12672,
+      "ttft_ms": 430.48,
+      "model_ms": 580.26,
+      "condenser_header": "",
+      "tool_chars_before": 0,
+      "tool_chars_after": 0
+    },
+    {
+      "req_index": 46,
+      "pair": 23,
+      "arm": "condensed",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "ref_count"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_d199042ea32c4d1690fba074",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"ref_count\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 4995,
+      "completion_tokens": 26,
+      "upstream_cached_tokens": 4224,
+      "ttft_ms": 352.87,
+      "model_ms": 447.14,
+      "condenser_header": "v2",
+      "tool_chars_before": 40141,
+      "tool_chars_after": 9662
+    },
+    {
+      "req_index": 47,
+      "pair": 24,
+      "arm": "raw",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "PrefixRadixTree.*evict_expired_leaf"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_9ac367ed74814c65b90a2c17",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"PrefixRadixTree.*evict_expired_leaf\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 14608,
+      "completion_tokens": 35,
+      "upstream_cached_tokens": 12672,
+      "ttft_ms": 403.62,
+      "model_ms": 529.31,
+      "condenser_header": "",
+      "tool_chars_before": 0,
+      "tool_chars_after": 0
+    },
+    {
+      "req_index": 48,
+      "pair": 24,
+      "arm": "condensed",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "ref_count"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_2d0d1b727be242f6830c5cd1",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"ref_count\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 4995,
+      "completion_tokens": 26,
+      "upstream_cached_tokens": 4224,
+      "ttft_ms": 362.83,
+      "model_ms": 439.17,
+      "condenser_header": "v2",
+      "tool_chars_before": 40141,
+      "tool_chars_after": 9662
+    },
+    {
+      "req_index": 49,
+      "pair": 25,
+      "arm": "raw",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "class SSEChunkAssembler"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_5e0d61427a5242fb949dbbc6",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"class SSEChunkAssembler\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 14608,
+      "completion_tokens": 29,
+      "upstream_cached_tokens": 12672,
+      "ttft_ms": 407.84,
+      "model_ms": 489.28,
+      "condenser_header": "",
+      "tool_chars_before": 0,
+      "tool_chars_after": 0
+    },
+    {
+      "req_index": 50,
+      "pair": 25,
+      "arm": "condensed",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "ref_count"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_4649482b7b0d4efabdbc0096",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"ref_count\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 4995,
+      "completion_tokens": 26,
+      "upstream_cached_tokens": 4224,
+      "ttft_ms": 347.97,
+      "model_ms": 426.11,
+      "condenser_header": "v2",
+      "tool_chars_before": 40141,
+      "tool_chars_after": 9662
+    },
+    {
+      "req_index": 51,
+      "pair": 26,
+      "arm": "raw",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "class.*SSEChunkAssembler"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_1a0a35db6e574c058e0cb06b",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"class.*SSEChunkAssembler\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 14608,
+      "completion_tokens": 31,
+      "upstream_cached_tokens": 12672,
+      "ttft_ms": 418.33,
+      "model_ms": 493.38,
+      "condenser_header": "",
+      "tool_chars_before": 0,
+      "tool_chars_after": 0
+    },
+    {
+      "req_index": 52,
+      "pair": 26,
+      "arm": "condensed",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "ref_count"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_d6fff954f9f5420dbdf6936e",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"ref_count\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 4995,
+      "completion_tokens": 26,
+      "upstream_cached_tokens": 4224,
+      "ttft_ms": 353.83,
+      "model_ms": 450.05,
+      "condenser_header": "v2",
+      "tool_chars_before": 40141,
+      "tool_chars_after": 9662
+    },
+    {
+      "req_index": 53,
+      "pair": 27,
+      "arm": "raw",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "class SSEChunkAssembler"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_6d8d314ebf9c4cd1b8dfa1b7",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"class SSEChunkAssembler\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 14608,
+      "completion_tokens": 29,
+      "upstream_cached_tokens": 12672,
+      "ttft_ms": 395.77,
+      "model_ms": 495.46,
+      "condenser_header": "",
+      "tool_chars_before": 0,
+      "tool_chars_after": 0
+    },
+    {
+      "req_index": 54,
+      "pair": 27,
+      "arm": "condensed",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "ref_count"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_fc8f8efab4504d9c94d1fd66",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"ref_count\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 4995,
+      "completion_tokens": 26,
+      "upstream_cached_tokens": 4224,
+      "ttft_ms": 352.12,
+      "model_ms": 446.19,
+      "condenser_header": "v2",
+      "tool_chars_before": 40141,
+      "tool_chars_after": 9662
+    },
+    {
+      "req_index": 55,
+      "pair": 28,
+      "arm": "raw",
+      "no_tool_call": false,
+      "parsed_tool": "read_file",
+      "parsed_tool_args": {
+        "path": "src/tensorroute/codec.py"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_b6f80fbcc58848e2969e9810",
+          "type": "function",
+          "function": {
+            "name": "read_file",
+            "arguments": "{\"path\": \"src/tensorroute/codec.py\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 14608,
+      "completion_tokens": 31,
+      "upstream_cached_tokens": 12672,
+      "ttft_ms": 412.62,
+      "model_ms": 519.3,
+      "condenser_header": "",
+      "tool_chars_before": 0,
+      "tool_chars_after": 0
+    },
+    {
+      "req_index": 56,
+      "pair": 28,
+      "arm": "condensed",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "ref_count"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_47da2a4c7ace4decafcb3901",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"ref_count\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 4995,
+      "completion_tokens": 26,
+      "upstream_cached_tokens": 4224,
+      "ttft_ms": 357.73,
+      "model_ms": 451.76,
+      "condenser_header": "v2",
+      "tool_chars_before": 40141,
+      "tool_chars_after": 9662
+    },
+    {
+      "req_index": 57,
+      "pair": 29,
+      "arm": "raw",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "class SSEChunkAssembler"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_2c235e298a2d40399be033fd",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"class SSEChunkAssembler\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 14608,
+      "completion_tokens": 29,
+      "upstream_cached_tokens": 12672,
+      "ttft_ms": 488.06,
+      "model_ms": 587.69,
+      "condenser_header": "",
+      "tool_chars_before": 0,
+      "tool_chars_after": 0
+    },
+    {
+      "req_index": 58,
+      "pair": 29,
+      "arm": "condensed",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "ref_count"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_0947ad9d8af341198e527179",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"ref_count\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 4995,
+      "completion_tokens": 26,
+      "upstream_cached_tokens": 4224,
+      "ttft_ms": 354.95,
+      "model_ms": 699.04,
+      "condenser_header": "v2",
+      "tool_chars_before": 40141,
+      "tool_chars_after": 9662
+    },
+    {
+      "req_index": 59,
+      "pair": 30,
+      "arm": "raw",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "class SSEChunkAssembler"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_8009113d914a43b49b0133ba",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"class SSEChunkAssembler\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 14608,
+      "completion_tokens": 29,
+      "upstream_cached_tokens": 12672,
+      "ttft_ms": 405.82,
+      "model_ms": 504.54,
+      "condenser_header": "",
+      "tool_chars_before": 0,
+      "tool_chars_after": 0
+    },
+    {
+      "req_index": 60,
+      "pair": 30,
+      "arm": "condensed",
+      "no_tool_call": false,
+      "parsed_tool": "read_file",
+      "parsed_tool_args": {
+        "path": "src/tensorroute/radix.py"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_2552f40b947e4c6db946550e",
+          "type": "function",
+          "function": {
+            "name": "read_file",
+            "arguments": "{\"path\": \"src/tensorroute/radix.py\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "I\u2019ll systematically diagnose and fix each failing test. Let me start by examining the radix tree reference counting bug, which is causing the two radix-related test failures.\n\nStarting with the radix tree tests to understand the reference counting issue:\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 4995,
+      "completion_tokens": 79,
+      "upstream_cached_tokens": 4224,
+      "ttft_ms": 363.09,
+      "model_ms": 740.2,
+      "condenser_header": "v2",
+      "tool_chars_before": 40141,
+      "tool_chars_after": 9662
+    },
+    {
+      "req_index": 61,
+      "pair": 31,
+      "arm": "raw",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "class SSEChunkAssembler"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_37155515142e4c72902540bc",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"class SSEChunkAssembler\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 14608,
+      "completion_tokens": 29,
+      "upstream_cached_tokens": 12672,
+      "ttft_ms": 435.6,
+      "model_ms": 534.33,
+      "condenser_header": "",
+      "tool_chars_before": 0,
+      "tool_chars_after": 0
+    },
+    {
+      "req_index": 62,
+      "pair": 31,
+      "arm": "condensed",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "ref_count"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_0b848384311e484d9c7f6e33",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"ref_count\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 4995,
+      "completion_tokens": 26,
+      "upstream_cached_tokens": 4224,
+      "ttft_ms": 361.91,
+      "model_ms": 455.06,
+      "condenser_header": "v2",
+      "tool_chars_before": 40141,
+      "tool_chars_after": 9662
+    },
+    {
+      "req_index": 63,
+      "pair": 32,
+      "arm": "raw",
+      "no_tool_call": false,
+      "parsed_tool": "read_file",
+      "parsed_tool_args": {
+        "path": "src/tensorroute/codec.py"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_46a2352a617d496698f412fd",
+          "type": "function",
+          "function": {
+            "name": "read_file",
+            "arguments": "{\"path\": \"src/tensorroute/codec.py\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "I\u2019ve run the full test suite and identified the failing tests across all five subsystems. The failures are:\n\n1. **Codec** \u2013 Two SSE concatenation tests fail with JSON parsing errors (`Extra data`).\n2. **Limiter** \u2013 Both subsecond refill tests return 0 tokens instead of the expected refilled amount.\n3. **Radix** \u2013 Two eviction tests fail because shared\u2011parent reference counts become 0 instead of 1/2.\n4. **Scheduler** \u2013 All three drain\u2011partial tests incorrectly return 0 or 1 batches instead of the expected count.\n5. **Telemetry** \u2013 Percentile calculations use an off\u2011by\u2011one index, causing `IndexError` and wrong percentile values.\n\nAll of these stem from incorrect handling of fractional elapsed time, reference\u2011count updates, partial\u2011batch draining, and percentile index calculation. I\u2019ll fix each module in turn.\n\n**Plan:**\n1. Read and fix `src/tensorroute/codec.py` to properly concatenate tool\u2011call arguments and produce valid JSON.\n2. Read and fix `src/tensorroute/limiter.py` to compute fractional elapsed time correctly.\n3. Read and fix `src/tensorroute/radix.py` to preserve shared\u2011parent reference counts during leaf eviction.\n4. Read and fix `src/tensorroute/scheduler.py` to emit partial batches when `flush_partial=True`.\n5. Read and fix `src/tensorroute/telemetry.py` to compute percentile indices safely.\n\nI will start with the codec module.\n\n**Next step:** examine `src/tensorroute/codec.py` to understand how tool\u2011call arguments are assembled and why the JSON is malformed. I'll use `read_file` for this.\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 14608,
+      "completion_tokens": 390,
+      "upstream_cached_tokens": 12672,
+      "ttft_ms": 483.76,
+      "model_ms": 1622.57,
+      "condenser_header": "",
+      "tool_chars_before": 0,
+      "tool_chars_after": 0
+    },
+    {
+      "req_index": 64,
+      "pair": 32,
+      "arm": "condensed",
+      "no_tool_call": true,
+      "parsed_tool": null,
+      "parsed_tool_args": null,
+      "native_tool_calls": [],
+      "raw_reply_content": "## 1\ufe0f\u20e3  radix \u2013 reference\u2011counting bug  \n\n**Problem:** Expired leaf removal was clearing the `ref_count` of shared parent nodes, causing assertions like  \n`assert shared_parent.ref_count == 1` to fail (actual\u202f0).  \n\n**Root cause:** When a leaf is evicted the code walks up the parent chain and *unconditionally* decrements the parent\u2019s `ref_count`. If a parent\u2019s count reaches zero it is also removed, which loses the reference that sibling leaves still hold.\n\n**Fix:** Decrement the parent\u2019s `ref_count` only if the child being removed was the *last* reference; otherwise keep the count intact. The easiest way is to move the decrement *after* we have confirmed the child is really gone from the parent\u2019s `children` mapping.\n\n**Action:**  \n- Open `src/tensorroute/radix.py`.  \n- Locate the `evict_expired_leaves` method (the loop that checks `node.ttl_seconds` and removes children).  \n- Adjust the reference\u2011count handling so that a parent\u2019s count is only changed when the child is actually removed from the parent\u2019s `children` dict.\n\n```python\n# ----- src/tensorroute/radix.py -----\n# replace the block that decrements ref_count unconditionally with:\n# only decrement when the child is actually removed\nchild = node.children.pop(key)\nnode.ref_count -= 1\n```\n\n(Exact patch shown after reading the file.)\n\n\n---\n## 2\ufe0f\u20e3  scheduler \u2013 partial\u2011batch draining  \n\n**Problem:** `drain_all_batches(flush_partial=True)` returns only the full batches; tail batches smaller than `max_batch_size` are silently dropped.\n\n**Root cause:** The drain loop stops when the remaining queue size `< max_batch_size` *and* `flush_partial` is `False`. When `flush_partial=True` the code still requires the remainder to be exactly `max_batch_size`, so a smaller final batch is ignored.\n\n**Fix:** When `flush_partial=True` we must emit the remainder even if it is smaller than `max_batch_size`. Change the termination condition to \u201cif the queue is empty **or** (`flush_partial` is `False` **and** remaining size < `max_batch_size`)\u201d.\n\n**Action:**  \n- Open `src/tensorroute/scheduler.py`.  \n- Edit the `drain_all_batches` method accordingly.\n\n```python\n# ----- src/tensorroute/scheduler.py -----\n# replace the loop exit test with:\nwhile not self._queue.empty():\n    if not flush_partial and len(self._queue.queue) < self.max_batch_size:\n        break\n    # ... existing batch\u2011building logic ...\n```\n\n---\n## 3\ufe0f\u20e3  limiter \u2013 sub\u2011second fractional refill  \n\n**Problem:** The token bucket\u2019s `available_tokens(now)` returns `0.0` for sub\u2011second timestamps, causing failures like  \n\n```\nassert lim.available_tokens(now=1.25) == pytest.approx(50.0)\n```\n\n**Root cause:** The refill calculation used integer division (`//`) instead of true fractional division, so the elapsed time of `0.25\u202fs` was truncated to `0` tokens.\n\n**Fix:** Replace the integer division with floating\u2011point division and keep the fractional part when computing `tokens_to_add`.\n\n**Action:**  \n- Open `src/tensorroute/limiter.py`.  \n- Find the line that computes `tokens_to_add = (elapsed_seconds * self.refill_rate_per_sec) // 1`.  \n- Change it to use true division and cap at the remaining capacity.\n\n```python\n# ----- src/tensorroute/limiter.py -----\n# replace\ntokens_to_add = (elapsed_seconds * self.refill_rate_per_sec) // 1\n# with\ntokens_to_add = elapsed_seconds * self.refill_rate_per_sec\ntokens_to_add = min(tokens_to_add, self.capacity - self.tokens)\n```\n\n---\n## 4\ufe0f\u20e3  codec \u2013 SSE concatenation JSON\u2011parsing error  \n\n**Problem:** The SSE codec assembler receives a stream of JSON fragments that together form a complete JSON object. When the fragments are concatenated, the resulting string contains stray characters (e.g. an extra comma or missing closing brace) causing `json.loads` to raise `JSONDecodeError: Extra data`.\n\n**Root cause:** The assembler builds each chunk by na\u00efvely appending raw JSON fragments without ensuring the whole payload is a *single* valid JSON document. The test expects the final assembled `tool_calls` array to be parsable as a single JSON object.\n\n**Fix:** After feeding all chunks, collapse the accumulated string into a well\u2011formed JSON document before parsing. The simplest",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 4995,
+      "completion_tokens": 1024,
+      "upstream_cached_tokens": 4224,
+      "ttft_ms": 360.69,
+      "model_ms": 3857.29,
+      "condenser_header": "v2",
+      "tool_chars_before": 40141,
+      "tool_chars_after": 9662
+    },
+    {
+      "req_index": 65,
+      "pair": 33,
+      "arm": "raw",
+      "no_tool_call": false,
+      "parsed_tool": "read_file",
+      "parsed_tool_args": {
+        "path": "src/tensorroute/codec.py"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_74a00e141e5d41d78eb2159d",
+          "type": "function",
+          "function": {
+            "name": "read_file",
+            "arguments": "{\"path\": \"src/tensorroute/codec.py\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "I'll systematically analyze and fix each failing test category. Let me start with the codec-related failures since they seem to be JSON parsing issues.\n\n## Phase 1. READING: Understanding the Problem\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 14608,
+      "completion_tokens": 70,
+      "upstream_cached_tokens": 12672,
+      "ttft_ms": 416.48,
+      "model_ms": 636.18,
+      "condenser_header": "",
+      "tool_chars_before": 0,
+      "tool_chars_after": 0
+    },
+    {
+      "req_index": 66,
+      "pair": 33,
+      "arm": "condensed",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "ref_count"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_2618158531f6419cad950f16",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"ref_count\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 4995,
+      "completion_tokens": 26,
+      "upstream_cached_tokens": 4224,
+      "ttft_ms": 361.77,
+      "model_ms": 442.0,
+      "condenser_header": "v2",
+      "tool_chars_before": 40141,
+      "tool_chars_after": 9662
+    },
+    {
+      "req_index": 67,
+      "pair": 34,
+      "arm": "raw",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "radix"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_b3f0758d00b54b8c9dfd522e",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"radix\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 14608,
+      "completion_tokens": 26,
+      "upstream_cached_tokens": 12672,
+      "ttft_ms": 414.78,
+      "model_ms": 487.7,
+      "condenser_header": "",
+      "tool_chars_before": 0,
+      "tool_chars_after": 0
+    },
+    {
+      "req_index": 68,
+      "pair": 34,
+      "arm": "condensed",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "ref_count"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_e5df6659c17f47d297f37830",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"ref_count\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 4995,
+      "completion_tokens": 26,
+      "upstream_cached_tokens": 4224,
+      "ttft_ms": 344.77,
+      "model_ms": 424.84,
+      "condenser_header": "v2",
+      "tool_chars_before": 40141,
+      "tool_chars_after": 9662
+    },
+    {
+      "req_index": 69,
+      "pair": 35,
+      "arm": "raw",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "class SSEChunkAssembler"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_e09cafa11cf3430b92bf06dc",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"class SSEChunkAssembler\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 14608,
+      "completion_tokens": 29,
+      "upstream_cached_tokens": 12672,
+      "ttft_ms": 509.21,
+      "model_ms": 601.31,
+      "condenser_header": "",
+      "tool_chars_before": 0,
+      "tool_chars_after": 0
+    },
+    {
+      "req_index": 70,
+      "pair": 35,
+      "arm": "condensed",
+      "no_tool_call": false,
+      "parsed_tool": "read_file",
+      "parsed_tool_args": {
+        "path": "src/tensorroute/radix.py"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_3c6338ec98e544d39dbfce58",
+          "type": "function",
+          "function": {
+            "name": "read_file",
+            "arguments": "{\"path\": \"src/tensorroute/radix.py\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "Okay, we have a full picture now. All 45 unit tests are running and we can see exactly which tests are failing and why. The failures are grouped by subsystem:\n\n## Failing Tests Overview\n\n### 1. Radix Tree (tests/test_radix.py)\n- `test_radix_evict_expired_leaf_preserves_shared_parent_ref_count`: Expected ref_count=1 but got 0\n- `test_radix_evict_deep_chain_updates_all_ancestors_once`: Expected ref_count=2 but got 1\n\n### 2. Batch Scheduler (tests/test_scheduler.py)\n- `test_scheduler_drain_all_flushes_partial_remainder_when_true`: Expected 2 batches but got 1\n- `test_scheduler_drain_all_retains_partial_remainder_when_false`: Expected 1 batch but got 0\n- `test_scheduler_drain_single_item_with_flush_partial_true`: Expected 1 batch but got 0\n\n### 3. Token Bucket Limiter (tests/test_limiter.py)\n- `test_limiter_subsecond_fractional_refill`: Got 0.0 tokens instead of expected ~50.0\n- `test_limiter_multiple_subsecond_ticks_accumulate_accurately`: Got 0.0 tokens instead of expected ~50.0\n\n### 4. Codec (tests/test_codec.py)\n- `test_codec_concatenates_single_tool_call_arguments_across_chunks`: JSON parsing error - \"Extra data\"\n- `test_codec_concatenates_multiple_indexed_tool_calls`: JSON parsing error - \"Extra data\"\n\n### 5. Telemetry (tests/test_telemetry.py)\n- `test_telemetry_single_sample_percentiles_do_not_overflow`: IndexError in percentile calculation\n- `test_telemetry_ten_sample_nearest_rank_percentiles`: Wrong percentile value (600.0 vs expected 500.0)\n- `test_telemetry_token_reuse_and_hit_rate`: IndexError in summary()\n\n## Root Cause Analysis\n\nLooking at the failure patterns:\n\n1. **Reference Counting Issues** (radix tests): The radix tree reference counting is inconsistent during eviction, leading to premature cleanup of shared prefixes.\n\n2. **Batch Scheduler Logic** (scheduler tests): The `drain_all_batches` method doesn't properly handle partial batches when `flush_partial=True`, and may return empty results even when items are queued.\n\n3. **Limiter Refill Arithmetic** (limiter tests): Fractional refill calculations are truncated to zero, likely due to integer division or timestamp miscalculation.\n\n4. **Codec JSON Parsing** (codec tests): The SSE codec assembler produces malformed JSON when concatenating tool call arguments across chunks.\n\n5. **Telemetry Percentile Bounds** (telemetry tests): Index calculation for percentile lookup goes out of bounds on small sample windows.\n\n## Fix Strategy\n\nBased on the test failures, I need to address each subsystem systematically:\n\n1. **Fix reference count accounting in radix tree** - Ensure parent nodes maintain correct reference counts during eviction\n2. **Repair batch scheduler draining logic** - Handle partial batches correctly when `flush_partial=True`\n3. **Correct limiter fractional refill calculation** - Preserve fractional precision in token refill computation\n4. **Fix codec JSON assembly** - Ensure proper JSON formatting when concatenating arguments across chunks\n5. **Stabilize telemetry percentile calculations** - Fix index bounds checking and edge case handling\n\nI'll start with the most foundational issues (radix reference counting) and work upward. Let me inspect the specific files that need modification.\n\n### 1. Radix Reference Count Fix\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 4995,
+      "completion_tokens": 834,
+      "upstream_cached_tokens": 4224,
+      "ttft_ms": 351.99,
+      "model_ms": 3483.46,
+      "condenser_header": "v2",
+      "tool_chars_before": 40141,
+      "tool_chars_after": 9662
+    },
+    {
+      "req_index": 71,
+      "pair": 36,
+      "arm": "raw",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "class SSEChunkAssembler"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_8f2800fa28c54e8cacc2d9b8",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"class SSEChunkAssembler\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 14608,
+      "completion_tokens": 29,
+      "upstream_cached_tokens": 12672,
+      "ttft_ms": 412.41,
+      "model_ms": 491.17,
+      "condenser_header": "",
+      "tool_chars_before": 0,
+      "tool_chars_after": 0
+    },
+    {
+      "req_index": 72,
+      "pair": 36,
+      "arm": "condensed",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "ref_count"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_78c6a264adae4e4092ef6d76",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"ref_count\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 4995,
+      "completion_tokens": 26,
+      "upstream_cached_tokens": 4224,
+      "ttft_ms": 399.82,
+      "model_ms": 477.22,
+      "condenser_header": "v2",
+      "tool_chars_before": 40141,
+      "tool_chars_after": 9662
+    },
+    {
+      "req_index": 73,
+      "pair": 37,
+      "arm": "raw",
+      "no_tool_call": false,
+      "parsed_tool": "read_file",
+      "parsed_tool_args": {
+        "path": "src/tensorroute/radix.py"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_6d44e6f5afe04430b01f1ab9",
+          "type": "function",
+          "function": {
+            "name": "read_file",
+            "arguments": "{\"path\": \"src/tensorroute/radix.py\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "I\u2019ve run the full test suite and can see the exact failures grouped by subsystem.  \nAll 12 failing tests correspond to the 5 reported regression buckets, and each failure points to a concrete bug in the relevant module:\n\n| Subsystem | Symptom | Test(s) that fail |\n|-----------|---------|-------------------|\n| **codec** | JSON\u2011parsing errors when assembling tool\u2011call arguments across SSE chunks | `test_codec_concatenates_single_tool_call_arguments_across_chunks`, `test_codec_concatenates_multiple_indexed_tool_calls` |\n| **limiter** | Token\u2011bucket refill arithmetic returns\u202f0\u202ftokens even after sub\u2011second elapsed time | `test_limiter_subsecond_fractional_refill`, `test_limiter_multiple_subsecond_ticks_accumulate_accurately` |\n| **radix** | Reference\u2011count under\u2011flow / missing increments after leaf eviction | `test_radix_evict_expired_leaf_preserves_shared_parent_ref_count`, `test_radix_evict_deep_chain_updates_all_ancestors_once` |\n| **scheduler** | `drain_all_batches` does not emit partial tail batches when `flush_partial=True` | `test_scheduler_drain_all_flushes_partial_remainder_when_true`, `test_scheduler_drain_all_retains_partial_remainder_when_false`, `test_scheduler_drain_single_item_with_flush_partial_true` |\n| **telemetry** | Nearest\u2011rank percentile calculation uses an out\u2011of\u2011range index, causing `IndexError` | `test_telemetry_single_sample_percentiles_do_not_overflow`, `test_telemetry_ten_sample_nearest_rank_percentiles`, `test_telemetry_token_reuse_and_hit_rate` |\n\nThe next step is to fix each of these bugs.  \nI will start with the **radix reference\u2011count issue** because it is the root cause of two failing tests and the logic is isolated to `src/tensorroute/radix.py`.  \n\nI will:\n1. Read the current implementation of the radix tree (`read_file`).\n2. Edit the file to correctly preserve the shared\u2011parent reference count when an expired leaf is evicted (`edit_file`).\n\nAfter the edit I will re\u2011run the suite to confirm the radix\u2011related failures are resolved, then move on to the next subsystem.\n\n---  \n\n**Step\u202f1 \u2013 Examine `src/tensorroute/radix.py`.**  \n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 14608,
+      "completion_tokens": 580,
+      "upstream_cached_tokens": 12672,
+      "ttft_ms": 403.67,
+      "model_ms": 2253.49,
+      "condenser_header": "",
+      "tool_chars_before": 0,
+      "tool_chars_after": 0
+    },
+    {
+      "req_index": 74,
+      "pair": 37,
+      "arm": "condensed",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "ref_count"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_fd0f310bc3ca43c581fe01fa",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"ref_count\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 4995,
+      "completion_tokens": 26,
+      "upstream_cached_tokens": 4224,
+      "ttft_ms": 360.57,
+      "model_ms": 427.02,
+      "condenser_header": "v2",
+      "tool_chars_before": 40141,
+      "tool_chars_after": 9662
+    },
+    {
+      "req_index": 75,
+      "pair": 38,
+      "arm": "raw",
+      "no_tool_call": false,
+      "parsed_tool": "read_file",
+      "parsed_tool_args": {
+        "path": "src/tensorroute/scheduler.py"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_03dbdf71049a461a84674f5c",
+          "type": "function",
+          "function": {
+            "name": "read_file",
+            "arguments": "{\"path\": \"src/tensorroute/scheduler.py\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 14608,
+      "completion_tokens": 31,
+      "upstream_cached_tokens": 12672,
+      "ttft_ms": 409.25,
+      "model_ms": 479.33,
+      "condenser_header": "",
+      "tool_chars_before": 0,
+      "tool_chars_after": 0
+    },
+    {
+      "req_index": 76,
+      "pair": 38,
+      "arm": "condensed",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "ref_count"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_7e12d2adaa6740598586a2b4",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"ref_count\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 4995,
+      "completion_tokens": 26,
+      "upstream_cached_tokens": 4224,
+      "ttft_ms": 426.78,
+      "model_ms": 493.1,
+      "condenser_header": "v2",
+      "tool_chars_before": 40141,
+      "tool_chars_after": 9662
+    },
+    {
+      "req_index": 77,
+      "pair": 39,
+      "arm": "raw",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "class SSEChunkAssembler"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_88298b4e881b45869a44d59b",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"class SSEChunkAssembler\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 14608,
+      "completion_tokens": 29,
+      "upstream_cached_tokens": 12672,
+      "ttft_ms": 404.62,
+      "model_ms": 474.43,
+      "condenser_header": "",
+      "tool_chars_before": 0,
+      "tool_chars_after": 0
+    },
+    {
+      "req_index": 78,
+      "pair": 39,
+      "arm": "condensed",
+      "no_tool_call": false,
+      "parsed_tool": "search_code",
+      "parsed_tool_args": {
+        "pattern": "ref_count"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_fcb486ba77ab4da4bd9e20e6",
+          "type": "function",
+          "function": {
+            "name": "search_code",
+            "arguments": "{\"pattern\": \"ref_count\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 4995,
+      "completion_tokens": 26,
+      "upstream_cached_tokens": 4224,
+      "ttft_ms": 345.86,
+      "model_ms": 413.08,
+      "condenser_header": "v2",
+      "tool_chars_before": 40141,
+      "tool_chars_after": 9662
+    },
+    {
+      "req_index": 79,
+      "pair": 40,
+      "arm": "raw",
+      "no_tool_call": false,
+      "parsed_tool": "read_file",
+      "parsed_tool_args": {
+        "path": "src/tensorroute/codec.py"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_38ed16c3da45419bbb852e03",
+          "type": "function",
+          "function": {
+            "name": "read_file",
+            "arguments": "{\"path\": \"src/tensorroute/codec.py\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 14608,
+      "completion_tokens": 31,
+      "upstream_cached_tokens": 12672,
+      "ttft_ms": 483.7,
+      "model_ms": 559.4,
+      "condenser_header": "",
+      "tool_chars_before": 0,
+      "tool_chars_after": 0
+    },
+    {
+      "req_index": 80,
+      "pair": 40,
+      "arm": "condensed",
+      "no_tool_call": false,
+      "parsed_tool": "read_file",
+      "parsed_tool_args": {
+        "path": "src/tensorroute/radix.py"
+      },
+      "native_tool_calls": [
+        {
+          "id": "call_b7a781353e114c558df11781",
+          "type": "function",
+          "function": {
+            "name": "read_file",
+            "arguments": "{\"path\": \"src/tensorroute/radix.py\"}"
+          }
+        }
+      ],
+      "raw_reply_content": "Okay, I see a lot of test failures across multiple modules. Let me systematically analyze the failures to understand what needs to be fixed.\n\nFirst, I'll examine the specific failures mentioned in the incident description:\n\n1. **Radix Tree Reference Counting Issues** - Tests show ref_count assertion failures\n2. **Scheduler Batch Draining Issues** - Tests show incorrect batch count when flush_partial=True\n3. **Limiter Fractional Refill Issues** - Tests show zero tokens instead of expected fractional refills\n4. **Codec JSON Parsing Issues** - Tests show JSON decoding errors with extra data\n5. **Telemetry Percentile Calculation Issues** - Tests show IndexError on single-sample windows\n\nLet me start by examining the specific failing tests to understand the root causes.\n\nBased on the test failures, I need to look at these specific files:\n- src/tensorroute/radix.py (reference counting issues)\n- src/tensorroute/scheduler.py (batch draining issues)\n- src/tensorroute/limiter.py (fractional refill issues)\n- src/tensorroute/codec.py (JSON parsing issues)\n- src/tensorroute/telemetry.py (percentile calculation issues)\n\nLet me start with examining the radix tree reference counting issue since that's the first mentioned in the incident.\n",
+      "is_json_analysis_plan": false,
+      "unknown_tool_calls": [],
+      "prompt_tokens": 4995,
+      "completion_tokens": 299,
+      "upstream_cached_tokens": 4224,
+      "ttft_ms": 345.93,
+      "model_ms": 1210.21,
+      "condenser_header": "v2",
+      "tool_chars_before": 40141,
+      "tool_chars_after": 9662
+    }
+  ]
+}
